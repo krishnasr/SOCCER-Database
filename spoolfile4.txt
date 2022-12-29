@@ -1,0 +1,10 @@
+mysql> USE kxs0344;
+Database changed
+mysql> INSERT INTO COUNTRY VALUES("USA",380.60,4,"Chris Hemsworth");
+ERROR 1062 (23000): Duplicate entry 'USA' for key 'COUNTRY.PRIMARY'  ---> This violates Key Constraint because a primary key can not have duplicate values it need to have unique values.
+mysql> INSERT INTO COUNTRY(Population,No_of_Worldcup_won,Manager) VALUES(380.60,4,"Chris Hemsworth");
+ERROR 1364 (HY000): Field 'Country_Name' doesn't have a default value ---> This violates Entity Integrity Constraint because a primary key cannot have NULL or Empty values.
+mysql> INSERT INTO PLAYERS VALUES(12345, "REMI RONALDO","REMI","RONALDO","1980-02-12","India",191,"Deportive Cali","Defender",120,0);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`kxs0344`.`PLAYERS`, CONSTRAINT `PLAYERS_ibfk_1` FOREIGN KEY (`Country`) REFERENCES `COUNTRY` (`Country_Name`)) ---> This violates Referencial Integrity constraint because a foreign key cannot have its won values a foreign key should have a value that is from a primary key or it should be NULL.
+mysql> notee;
+

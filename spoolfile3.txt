@@ -1,0 +1,1266 @@
+mysql> USE kxs0344;
+Database changed
+mysql> SELECT Name, Club, Country_Name FROM COUNTRY, PLAYERS WHERE Position="Midfielder" AND Country="USA" AND COUNTRY.Country_Name=PLAYERS.Country;
++------------------+----------------------+--------------+
+| Name             | Club                 | Country_Name |
++------------------+----------------------+--------------+
+| KYLE BECKERMAN   | Real Salt Lake       | USA          |
+| BRAD DAVIS       | Houston Dynamo       | USA          |
+| JERMAINE JONES   | Besiktas JK          | USA          |
+| MICHAEL BRADLEY  | Toronto FC           | USA          |
+| ALEJANDRO BEDOYA | FC Nantes            | USA          |
+| MIX DISKERUD     | Rosenborg BK         | USA          |
+| GRAHAM ZUSI      | Sporting Kansas City | USA          |
+| JULIAN GREEN     | FC Bayern Muenchen   | USA          |
++------------------+----------------------+--------------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT Name, Club, Country, (2014-YEAR(DOB)) FROM PLAYERS;
++----------------------------+-----------------------------+----------------------+------------------+
+| Name                       | Club                        | Country              | (2014-YEAR(DOB)) |
++----------------------------+-----------------------------+----------------------+------------------+
+| MARIO YEPES                | Atalanta Bergamo            | Columbia             |               38 |
+| FARYD MONDRAGON            | Deportivo Cali              | Columbia             |               43 |
+| GIANLUIGI BUFFON           | Juventus FC                 | Italy                |               36 |
+| GEORGIOS KARAGOUNIS        | Fulham FC                   | Greece               |               37 |
+| SAMUEL ETOO                | Chelsea FC                  | Cameroon             |               33 |
+| PEPE REINA                 | SSC Napoli                  | Spain                |               32 |
+| DAMARCUS BEASLEY           | Puebla FC                   | USA                  |               32 |
+| KYLE BECKERMAN             | Real Salt Lake              | USA                  |               32 |
+| MICHAEL ESSIEN             | AC Milan                    | Ghana                |               32 |
+| ALFREDO TALAVERA           | Deportivo Toluca FC         | Mexico               |               32 |
+| MARTIN SILVA               | CR Vasco da Gama            | Uruguay              |               31 |
+| THIAGO MOTTA               | Paris Saint-Germain FC      | Italy                |               32 |
+| IKER CASILLAS              | Real Madrid CF              | Spain                |               33 |
+| DIDIER ZOKORA              | Trabzonspor                 | Ivory Coast          |               34 |
+| YASUHITO ENDO              | Gamba Osaka                 | Japan                |               34 |
+| XAVI HERNANDEZ             | FC Barcelona                | Spain                |               34 |
+| ANDREA PIRLO               | Juventus FC                 | Italy                |               35 |
+| ANTONIO CASSANO            | Parma FC                    | Italy                |               32 |
+| RAFAEL MARQUEZ             | Club Leon                   | Mexico               |               35 |
+| NOEL VALLADARES            | CD Olimpia                  | Honduras             |               37 |
+| MARK BRESCIANO             | Al Gharafa SC               | Australia            |               34 |
+| JOSEPH YOBO                | Norwich City FC             | Nigeria              |               34 |
+| TIM HOWARD                 | Everton FC                  | USA                  |               35 |
+| JOHNNY HERRERA             | Club Universidad de Chile   | Chile                |               33 |
+| EDISON MENDEZ              | Independiente Santa Fe      | Ecuador              |               35 |
+| BOUBACAR BARRY             | KSC Lokeren                 | Ivory Coast          |               35 |
+| KOLO TOURE                 | Liverpool FC                | Ivory Coast          |               33 |
+| JULIO CESAR                | Toronto FC                  | Brazil               |               35 |
+| STIPE PLETIKOSA            | FC Rostov                   | Croatia              |               35 |
+| YOSHITO OKUBO              | Kawasaki Frontale           | Japan                |               32 |
+| MAICON SISENANDO           | AS Roma                     | Brazil               |               33 |
+| ALDO RAMIREZ               | CA Monarcas Morelia         | Columbia             |               33 |
+| JORGE GUAGUA               | CS Emelec                   | Ecuador              |               33 |
+| BRAD DAVIS                 | Houston Dynamo              | USA                  |               33 |
+| MICKAEL LANDREAU           | SC Bastia                   | France               |               35 |
+| MIROSLAV KLOSE             | SS Lazio                    | Germany              |               36 |
+| JAVIER MASCHERANO          | FC Barcelona                | Argentina            |               30 |
+| PABLO ZABALETA             | Manchester City FC          | Argentina            |               29 |
+| CHIGOZIE AGBIM             | Enugu Rangers FC            | Nigeria              |               30 |
+| ALEX WILKINSON             | Jeonbuk Hyundai Motors FC   | Australia            |               30 |
+| SULLEY MUNTARI             | AC Milan                    | Ghana                |               30 |
+| CHRISTIAN BOLANOS          | FC Kobenhavn                | Costa Rica           |               30 |
+| ROY MILLER                 | New York Red Bulls          | Costa Rica           |               30 |
+| ANDRES INIESTA             | FC Barcelona                | Spain                |               30 |
+| FERNANDO TORRES            | Chelsea FC                  | Spain                |               30 |
+| HASSAN YEBDA               | Udinese Calcio              | Algeria              |               30 |
+| JERMAINE JONES             | Besiktas JK                 | USA                  |               33 |
+| MAXI RODRIGUEZ             | CA Newells Old Boys         | Argentina            |               33 |
+| JEFFERSON GALVAO           | Botafogo FR                 | Brazil               |               31 |
+| YASUYUKI KONNO             | Gamba Osaka                 | Japan                |               31 |
+| WALTER AYOVI               | CF Pachuca                  | Ecuador              |               35 |
+| SEGUNDO CASTILLO           | Al Hilal FC                 | Ecuador              |               32 |
+| KLAAS JAN HUNTELAAR        | FC Schalke 04               | Netherlands          |               31 |
+| ARJEN ROBBEN               | FC Bayern Muenchen          | Netherlands          |               30 |
+| AUSTINE EJIDE              | Hapoel Beer Sheva FC        | Nigeria              |               30 |
+| NICK RIMANDO               | Real Salt Lake              | USA                  |               35 |
+| DIEGO PEREZ                | Bologna FC                  | Uruguay              |               34 |
+| FRANK LAMPARD              | Chelsea FC                  | England              |               36 |
+| JAVAD NEKOUNAM             | Kuwait SC                   | Iran                 |               34 |
+| SHOLA AMEOBI               | Newcastle United FC         | Nigeria              |               33 |
+| SERGEY IGNASHEVICH         | CSKA Moscow                 | Russia               |               35 |
+| VASILY BEREZUTSKIY         | CSKA Moscow                 | Russia               |               32 |
+| ALEKSANDR KERZHAKOV        | FC Zenit St. Petersburg     | Russia               |               32 |
+| HELDER POSTIGA             | SS Lazio                    | Portugal             |               32 |
+| IVICA OLIC                 | VfL Wolfsburg               | Croatia              |               35 |
+| DIEGO FORLAN               | Cerezo Osaka                | Uruguay              |               35 |
+| VINCENT ENYEAMA            | Lille OSC                   | Nigeria              |               32 |
+| DANI ALVES                 | FC Barcelona                | Brazil               |               31 |
+| ROMAN WEIDENFELLER         | Borussia Dortmund           | Germany              |               34 |
+| JOSE CORONA                | Cruz Azul FC                | Mexico               |               33 |
+| STEPHAN LICHTSTEINER       | Juventus FC                 | Switzerland          |               30 |
+| STEVE VON BERGEN           | BSC Young Boys              | Switzerland          |               31 |
+| DIEGO BENAGLIO             | VfL Wolfsburg               | Switzerland          |               31 |
+| PHILIPP LAHM               | FC Bayern Muenchen          | Germany              |               31 |
+| BASTIAN SCHWEINSTEIGER     | FC Bayern Muenchen          | Germany              |               30 |
+| LUKAS PODOLSKI             | Arsenal FC                  | Germany              |               29 |
+| ASHKAN DEJAGAH             | Fulham FC                   | Iran                 |               28 |
+| WAYNE ROONEY               | Manchester United FC        | England              |               29 |
+| KEVIN PRINCE BOATENG       | FC Schalke 04               | Ghana                |               27 |
+| SAMI KHEDIRA               | Real Madrid CF              | Germany              |               27 |
+| MATT MCKAY                 | Brisbane Roar FC            | Australia            |               31 |
+| MARK MILLIGAN              | Melbourne Victory FC        | Australia            |               29 |
+| GLEN JOHNSON               | Liverpool FC                | England              |               30 |
+| MILE JEDINAK               | Crystal Palace FC           | Australia            |               30 |
+| YAYA TOURE                 | Manchester City FC          | Ivory Coast          |               31 |
+| EIJI KAWASHIMA             | Standard Liege              | Japan                |               31 |
+| ABEL AGUILAR               | Toulouse FC                 | Columbia             |               29 |
+| ARTHUR BOKA                | VfB Stuttgart               | Ivory Coast          |               31 |
+| JUNG SUNGRYONG             | Suwon Bluewings FC          | South Korea          |               29 |
+| DANIEL CAMBRONERO          | CS Herediano                | Costa Rica           |               28 |
+| KEYLOR NAVAS               | Levante UD                  | Costa Rica           |               28 |
+| JEAN MAKOUN                | Stade Rennais FC            | Cameroon             |               31 |
+| EZEQUIEL GARAY             | SL Benfica                  | Argentina            |               28 |
+| LUCAS BIGLIA               | SS Lazio                    | Argentina            |               28 |
+| DAVID SILVA                | Manchester City FC          | Spain                |               28 |
+| CESC FABREGAS              | FC Barcelona                | Spain                |               27 |
+| JOAO MOUTINHO              | AS Monaco                   | Portugal             |               28 |
+| MIGUEL VELOSO              | FC Dynamo Kyiv              | Portugal             |               28 |
+| VIEIRINHA DE FREITAS       | VfL Wolfsburg               | Portugal             |               28 |
+| CRISTIAN ZAPATA            | AC Milan                    | Columbia             |               28 |
+| PABLO ARMERO               | West Ham United FC          | Columbia             |               28 |
+| FREDY GUARIN               | FC Internazionale           | Columbia             |               28 |
+| DANY NOUNKEU               | Besiktas JK                 | Cameroon             |               28 |
+| ALEXANDRE SONG             | FC Barcelona                | Cameroon             |               27 |
+| LANDRY NGUEMO              | FC Girondins Bordeaux       | Cameroon             |               29 |
+| ADRIAN RAMOS               | Hertha BSC                  | Columbia             |               28 |
+| STEPHANE MBIA              | Sevilla FC                  | Cameroon             |               28 |
+| FERNANDO GAGO              | CA Boca Juniors             | Argentina            |               28 |
+| CRISTIANO RONALDO          | Real Madrid CF              | Portugal             |               29 |
+| MAURICIO PINILLA           | Cagliari Calcio             | Chile                |               30 |
+| LUIS SARITAMA              | Barcelona SC                | Ecuador              |               31 |
+| ANTONIO VALENCIA           | Manchester United FC        | Ecuador              |               29 |
+| CLAUDIO BRAVO              | Real Sociedad               | Chile                |               31 |
+| JORGE VALDIVIA             | Palmeiras                   | Chile                |               31 |
+| XABI ALONSO                | Real Madrid CF              | Spain                |               33 |
+| PARK CHUYOUNG              | Watford FC                  | South Korea          |               29 |
+| MAXWELL ANDRADE            | Paris Saint-Germain FC      | Brazil               |               33 |
+| CLINT DEMPSEY              | Seattle Sounders FC         | USA                  |               31 |
+| PER MERTESACKER            | Arsenal FC                  | Germany              |               30 |
+| JUANFRAN BELEN             | Atletico Madrid             | Spain                |               29 |
+| JAMES MILNER               | Manchester City FC          | England              |               28 |
+| SOULEYMANE BAMBA           | Trabzonspor                 | Ivory Coast          |               29 |
+| FERNANDINHO LUIZ ROZA      | Manchester City FC          | Brazil               |               29 |
+| MICHAEL UMANA              | Deportivo Saprissa          | Costa Rica           |               32 |
+| ASAMOAH GYAN               | Al Ain FC                   | Ghana                |               29 |
+| DANIELE DE ROSSI           | AS Roma                     | Italy                |               31 |
+| EUGENE GALEKOVIC           | Adelaide United FC          | Australia            |               33 |
+| JEAN BEAUSEJOUR            | Wigan Athletic FC           | Chile                |               30 |
+| WILSON PALACIOS            | Stoke City FC               | Honduras             |               30 |
+| JUNIOR DIAZ                | FSV Mainz 05                | Costa Rica           |               31 |
+| FRANCISCO RODRIGUEZ        | Club America                | Mexico               |               33 |
+| TRANQUILLO BARNETTA        | Eintracht Frankfurt         | Switzerland          |               29 |
+| PHILIPPE SENDEROS          | Valencia CF                 | Switzerland          |               29 |
+| RICARDO COSTA              | Valencia CF                 | Portugal             |               33 |
+| BRUNO ALVES                | Fenerbahce SK               | Portugal             |               33 |
+| RAUL MEIRELES              | Fenerbahce SK               | Portugal             |               31 |
+| DANIJEL PRANJIC            | Panathinaikos FC            | Croatia              |               33 |
+| DARIJO SRNA                | Shakhtar Donetsk            | Croatia              |               32 |
+| PATRICE EVRA               | Manchester United FC        | France               |               33 |
+| DIDIER DROGBA              | Galatasaray SK              | Ivory Coast          |               36 |
+| KWAK TAEHWI                | Al Hilal FC                 | South Korea          |               33 |
+| TIM CAHILL                 | New York Red Bulls          | Australia            |               35 |
+| AMIRHOSSEIN SADEGHI        | Esteghlal Tehran FC         | Iran                 |               33 |
+| MASOUD SHOJAEI             | UD Las Palmas               | Iran                 |               30 |
+| DONIS ESCOBER              | CD Olimpia                  | Honduras             |               33 |
+| VICTOR BERNARDEZ           | San Jose Earthquakes        | Honduras             |               32 |
+| MAYNOR FIGUEROA            | Hull City FC                | Honduras             |               31 |
+| JERRY PALACIOS             | LD Alajuelense              | Honduras             |               32 |
+| PIERRE WEBO                | Fenerbahce SK               | Cameroon             |               32 |
+| PETER ODEMWINGIE           | Stoke City FC               | Nigeria              |               33 |
+| ANDREA BARZAGLI            | Juventus FC                 | Italy                |               33 |
+| EDUARDO DA SILVA           | Shakhtar Donetsk            | Croatia              |               31 |
+| BETO BASTOS                | Sevilla FC                  | Portugal             |               32 |
+| JOAO PEREIRA               | Valencia CF                 | Portugal             |               30 |
+| HUGO ALMEIDA               | Besiktas JK                 | Portugal             |               30 |
+| RIO MAVUBA                 | Lille OSC                   | France               |               30 |
+| SHUSAKU NISHIKAWA          | Urawa Red Diamonds          | Japan                |               28 |
+| PATRICK PEMBERTON          | LD Alajuelense              | Costa Rica           |               32 |
+| BRYAN RUIZ                 | PSV Eindhoven               | Costa Rica           |               29 |
+| KONSTANTINOS KATSOURANIS   | PAOK FC                     | Greece               |               35 |
+| STEVEN GERRARD             | Liverpool FC                | England              |               34 |
+| WESLEY SNEIJDER            | Galatasaray SK              | Netherlands          |               30 |
+| IGOR AKINFEEV              | CSKA Moscow                 | Russia               |               28 |
+| MADJID BOUGUERRA           | Lekhwiya SC                 | Algeria              |               32 |
+| GIORGIO CHIELLINI          | Juventus FC                 | Italy                |               30 |
+| GUILLERMO OCHOA            | AC Ajaccio                  | Mexico               |               29 |
+| VANGELIS MORAS             | Hellas Verona FC            | Greece               |               33 |
+| LOUKAS VYNTRA              | Levante UD                  | Greece               |               33 |
+| DIMITRIOS SALPINGIDIS      | PAOK FC                     | Greece               |               33 |
+| ALBERTO AQUILANI           | ACF Fiorentina              | Italy                |               30 |
+| VINCENT KOMPANY            | Manchester City FC          | Belgium              |               28 |
+| ANTHONY VANDEN BORRE       | RSC Anderlecht              | Belgium              |               27 |
+| EMIR SPAHIC                | Bayer 04 Leverkusen         | Bosnia & Herzegovina |               34 |
+| ZVJEZDAN MISIMOVIC         | Guizhou Renhe FC            | Bosnia & Herzegovina |               32 |
+| YURY ZHIRKOV               | FC Dynamo Moscow            | Russia               |               31 |
+| ALEXANDER SAMEDOV          | FC Lokomotiv Moscow         | Russia               |               30 |
+| IGOR DENISOV               | FC Dynamo Moscow            | Russia               |               30 |
+| CRISTIAN RODRIGUEZ         | Atletico Madrid             | Uruguay              |               29 |
+| VALON BEHRAMI              | SSC Napoli                  | Switzerland          |               29 |
+| RETO ZIEGLER               | US Sassuolo                 | Switzerland          |               28 |
+| JOHAN DJOUROU              | Hamburger SV                | Switzerland          |               27 |
+| BLERIM DZEMAILI            | SSC Napoli                  | Switzerland          |               28 |
+| GELSON FERNANDES           | SC Freiburg                 | Switzerland          |               28 |
+| RON VLAAR                  | Aston Villa FC              | Netherlands          |               29 |
+| SERGIO RAMOS               | Real Madrid CF              | Spain                |               28 |
+| RAUL ALBIOL                | SSC Napoli                  | Spain                |               29 |
+| NICOLAS LOMBAERTS          | FC Zenit St. Petersburg     | Belgium              |               29 |
+| THOMAS VERMAELEN           | Arsenal FC                  | Belgium              |               29 |
+| NIGEL DE JONG              | AC Milan                    | Netherlands          |               30 |
+| SALOMON KALOU              | Lille OSC                   | Ivory Coast          |               29 |
+| GERARD PIQUE               | FC Barcelona                | Spain                |               27 |
+| CHARLES ITANDJE            | Konyaspor                   | Cameroon             |               32 |
+| CARLOS VALDES              | CA San Lorenzo de Almagro   | Columbia             |               29 |
+| JO SILVA                   | Atletico Mineiro            | Brazil               |               27 |
+| DIRK KUYT                  | Fenerbahce SK               | Netherlands          |               34 |
+| ROBIN VAN PERSIE           | Manchester United FC        | Netherlands          |               31 |
+| CARLOS SALCIDO             | Tigres UANL                 | Mexico               |               34 |
+| MARCELO VIEIRA             | Real Madrid CF              | Brazil               |               26 |
+| WILLIAN DA SILVA           | Chelsea FC                  | Brazil               |               26 |
+| MARVIN CHAVEZ              | CD Chivas USA               | Honduras             |               31 |
+| ORIBE PERALTA              | Club Santos Laguna          | Mexico               |               30 |
+| ORESTIS KARNEZIS           | Granada CF                  | Greece               |               29 |
+| VASILEIOS TOROSIDIS        | AS Roma                     | Greece               |               29 |
+| ALEXANDROS TZIOLIS         | Kayserispor                 | Greece               |               29 |
+| SERGIO AGUERO              | Manchester City FC          | Argentina            |               26 |
+| JAVIER HERNANDEZ           | Manchester United FC        | Mexico               |               26 |
+| MAURICIO ISLA              | Juventus FC                 | Chile                |               26 |
+| CRISTOPHER TOSELLI         | CD Universidad Catolica     | Chile                |               26 |
+| ALEXIS SANCHEZ             | FC Barcelona                | Chile                |               26 |
+| DAVID OSPINA               | OGC Nice                    | Columbia             |               26 |
+| ALEXANDER MEJIA            | Atletico Nacional           | Columbia             |               26 |
+| FELIPE CAICEDO             | Al Jazira SCC               | Ecuador              |               26 |
+| MANUEL NEUER               | FC Bayern Muenchen          | Germany              |               28 |
+| IGNAZIO ABATE              | AC Milan                    | Italy                |               28 |
+| ALESSIO CERCI              | Torino FC                   | Italy                |               27 |
+| MATTHEW SPIRANOVIC         | Western Sydney Wanderers FC | Australia            |               26 |
+| EZEQUIEL LAVEZZI           | Paris Saint-Germain FC      | Argentina            |               29 |
+| LIONEL MESSI               | FC Barcelona                | Argentina            |               27 |
+| CARLOS CARMONA             | Atalanta Bergamo            | Chile                |               27 |
+| GONZALO JARA               | Nottingham Forest FC        | Chile                |               29 |
+| JOSE FUENZALIDA            | CSD Colo-Colo               | Chile                |               29 |
+| JUAN ZUNIGA                | SSC Napoli                  | Columbia             |               29 |
+| GABRIEL ACHILIER           | CS Emelec                   | Ecuador              |               29 |
+| FERNANDO MUSLERA           | Galatasaray SK              | Uruguay              |               28 |
+| DIEGO GODIN                | Atletico Madrid             | Uruguay              |               28 |
+| ALVARO PEREIRA             | Sao Paulo FC                | Uruguay              |               29 |
+| CRISTHIAN STUANI           | RCD Espanyol                | Uruguay              |               28 |
+| DAVID VILLA                | Atletico Madrid             | Spain                |               33 |
+| JORGE CLAROS               | CD Motagua                  | Honduras             |               28 |
+| EMILIO IZAGUIRRE           | Celtic FC                   | Honduras             |               28 |
+| ASMIR BEGOVIC              | Stoke City FC               | Bosnia & Herzegovina |               27 |
+| THEOFANIS GEKAS            | Konyaspor                   | Greece               |               34 |
+| RODRIGO PALACIO            | FC Internazionale           | Argentina            |               32 |
+| TIM KRUL                   | Newcastle United FC         | Netherlands          |               26 |
+| HARIS MEDUNJANIN           | Gaziantepspor               | Bosnia & Herzegovina |               29 |
+| GABRIEL PALETTA            | Parma FC                    | Italy                |               28 |
+| MASAHIKO INOHA             | Jubilo Iwata                | Japan                |               29 |
+| KEISUKE HONDA              | AC Milan                    | Japan                |               28 |
+| MARCELO DIAZ               | FC Basel                    | Chile                |               28 |
+| MICHAEL BRADLEY            | Toronto FC                  | USA                  |               27 |
+| MARTIN DEMICHELIS          | Manchester City FC          | Argentina            |               34 |
+| FRED CHAVES GUEDES         | Fluminense FC               | Brazil               |               31 |
+| OMAR GONZALEZ              | Los Angeles Galaxy          | USA                  |               26 |
+| JOHN OBI MIKEL             | Chelsea FC                  | Nigeria              |               27 |
+| GIOVANI DOS SANTOS         | Villarreal CF               | Mexico               |               25 |
+| MUBARAK WAKASO             | FC Rubin Kazan              | Ghana                |               24 |
+| CELSO BORGES               | AIK Solna                   | Costa Rica           |               26 |
+| RANDALL BRENES             | CSD Cartagines              | Costa Rica           |               31 |
+| BONIEK GARCIA              | Houston Dynamo              | Honduras             |               30 |
+| ANDRANIK TIMOTIAN          | Esteghlal Tehran FC         | Iran                 |               31 |
+| JOZY ALTIDORE              | Sunderland AFC              | USA                  |               25 |
+| HECTOR MORENO              | RCD Espanyol                | Mexico               |               26 |
+| SAMUEL INKOOM              | FC Platanias                | Ghana                |               25 |
+| CARL MEDJANI               | Valenciennes FC             | Algeria              |               29 |
+| HERNANES VIANA LIMA        | FC Internazionale           | Brazil               |               29 |
+| DIEGO LUGANO               | West Bromwich Albion FC     | Uruguay              |               34 |
+| CONSTANT DJAKPA            | Eintracht Frankfurt         | Ivory Coast          |               28 |
+| LUKA MODRIC                | Real Madrid CF              | Croatia              |               29 |
+| JOSE ROJAS                 | Club Universidad de Chile   | Chile                |               31 |
+| FRANCK RIBERY              | FC Bayern Muenchen          | France               |               31 |
+| ANDRES GUARDADO            | Bayer 04 Leverkusen         | Mexico               |               28 |
+| PEJMAN MONTAZERI           | Umm Salal SC                | Iran                 |               31 |
+| BEN FOSTER                 | West Bromwich Albion FC     | England              |               31 |
+| MICHEL VORM                | Swansea City AFC            | Netherlands          |               31 |
+| PAUL VERHAEGH              | FC Augsburg                 | Netherlands          |               31 |
+| BACARY SAGNA               | Arsenal FC                  | France               |               31 |
+| VARELA SILVESTRE           | FC Porto                    | Portugal             |               29 |
+| NANI DA CUNHA              | Manchester United FC        | Portugal             |               28 |
+| GOKHAN INLER               | SSC Napoli                  | Switzerland          |               30 |
+| SERGIO ROMERO              | AS Monaco                   | Argentina            |               27 |
+| ANGEL DI MARIA             | Real Madrid CF              | Argentina            |               26 |
+| MEHRDAD POOLADI            | Perspolis FC                | Iran                 |               27 |
+| GARY MEDEL                 | Cardiff City FC             | Chile                |               27 |
+| ARTURO VIDAL               | Juventus FC                 | Chile                |               27 |
+| UWA ECHIEJILE              | AS Monaco                   | Nigeria              |               26 |
+| JUAN MATA                  | Manchester United FC        | Spain                |               26 |
+| MARTIN CACERES             | Juventus FC                 | Uruguay              |               27 |
+| EDINSON CAVANI             | Paris Saint-Germain FC      | Uruguay              |               27 |
+| LEE KEUNHO                 | Sangju Sangmu FC            | South Korea          |               29 |
+| KI SUNGYUENG               | Sunderland AFC              | South Korea          |               25 |
+| PARK JOOHO                 | FSV Mainz 05                | South Korea          |               27 |
+| LEE CHUNGYONG              | Bolton Wanderers FC         | South Korea          |               26 |
+| ATSUTO UCHIDA              | FC Schalke 04               | Japan                |               26 |
+| MASATO MORISHIGE           | FC Tokyo                    | Japan                |               27 |
+| SHINJI KAGAWA              | Manchester United FC        | Japan                |               25 |
+| GIANCARLO GONZALEZ         | Columbus Crew               | Costa Rica           |               26 |
+| JOSE CUBERO                | CS Herediano                | Costa Rica           |               27 |
+| TOSHIHIRO AOYAMA           | Sanfrecce Hiroshima         | Japan                |               28 |
+| JAMES RODRIGUEZ            | AS Monaco                   | Columbia             |               23 |
+| DANIEL OPARE               | Standard Liege              | Ghana                |               24 |
+| RUI PATRICIO               | Sporting CP                 | Portugal             |               26 |
+| FABIO COENTRAO             | Real Madrid CF              | Portugal             |               26 |
+| DAVID DE GEA               | Manchester United FC        | Spain                |               24 |
+| MARCOS URENA               | Kuban Krasnodar             | Costa Rica           |               24 |
+| EDUARDO VARGAS             | Valencia CF                 | Chile                |               25 |
+| LUIS GARRIDO               | CD Olimpia                  | Honduras             |               24 |
+| JAVI MARTINEZ              | FC Bayern Muenchen          | Spain                |               26 |
+| LUIS SUAREZ                | Liverpool FC                | Uruguay              |               27 |
+| CESAR AZPILICUETA          | Chelsea FC                  | Spain                |               25 |
+| DAVID LUIZ                 | Chelsea FC                  | Brazil               |               27 |
+| MICHAEL BARRANTES          | Aalesunds FK                | Costa Rica           |               31 |
+| MAYA YOSHIDA               | Southampton FC              | Japan                |               26 |
+| CARLO COSTLY               | Real Espana                 | Honduras             |               32 |
+| GONZALO HIGUAIN            | SSC Napoli                  | Argentina            |               27 |
+| EFE AMBROSE                | Celtic FC                   | Nigeria              |               26 |
+| EDEN HAZARD                | Chelsea FC                  | Belgium              |               23 |
+| DANNY WELBECK              | Manchester United FC        | England              |               24 |
+| VICTOR MOSES               | Liverpool FC                | Nigeria              |               24 |
+| MAMADOU SAKHO              | Liverpool FC                | France               |               24 |
+| KIM SEUNGGYU               | Ulsan Hyundai FC            | South Korea          |               24 |
+| YUN SUKYOUNG               | Queens Park Rangers FC      | South Korea          |               24 |
+| HAN KOOKYOUNG              | Kashiwa Reysol              | South Korea          |               24 |
+| AGUSTIN ORION              | CA Boca Juniors             | Argentina            |               33 |
+| EMMANUEL AGYEMANG BADU     | Udinese Calcio              | Ghana                |               24 |
+| YOICHIRO KAKITANI          | Cerezo Osaka                | Japan                |               24 |
+| MANABU SAITO               | Yokohama F-Marinos          | Japan                |               24 |
+| YUYA OSAKO                 | TSV 1860 Muenchen           | Japan                |               24 |
+| TONI KROOS                 | FC Bayern Muenchen          | Germany              |               24 |
+| OSCAR BAGUI                | CS Emelec                   | Ecuador              |               32 |
+| PEPE FERREIRA              | Real Madrid CF              | Portugal             |               31 |
+| WALTER GARGANO             | Parma FC                    | Uruguay              |               30 |
+| JORGE FUCILE               | FC Porto                    | Uruguay              |               30 |
+| BRAD GUZAN                 | Aston Villa FC              | USA                  |               30 |
+| JALAL HOSSEINI             | Perspolis FC                | Iran                 |               32 |
+| KIM CHANGSOO               | Kashiwa Reysol              | South Korea          |               29 |
+| AURELIEN CHEDJOU           | Galatasaray SK              | Cameroon             |               29 |
+| CRISTHIAN NOBOA            | FC Dynamo Moscow            | Ecuador              |               29 |
+| CARLOS SANCHEZ             | Elche CF                    | Columbia             |               28 |
+| FABIAN ORELLANA            | Celta Vigo                  | Chile                |               28 |
+| EGIDIO AREVALO             | CA Monarcas Morelia         | Uruguay              |               32 |
+| ALVARO GONZALEZ            | SS Lazio                    | Uruguay              |               30 |
+| SHINJI OKAZAKI             | FSV Mainz 05                | Japan                |               28 |
+| MAXIMILIANO PEREIRA        | SL Benfica                  | Uruguay              |               30 |
+| MATTEO DARMIAN             | Torino FC                   | Italy                |               25 |
+| EHSAN HAJI SAFI            | Sepahan FC                  | Iran                 |               24 |
+| MAKOTO HASEBE              | 1. FC Nuernberg             | Japan                |               30 |
+| PAUL AGUILAR               | Club America                | Mexico               |               28 |
+| THIAGO SILVA               | Paris Saint-Germain FC      | Brazil               |               30 |
+| GERVINHO YAO KOUASSI       | AS Roma                     | Ivory Coast          |               27 |
+| JEFFERSON MONTERO          | CA Monarcas Morelia         | Ecuador              |               25 |
+| JAMES TROISI               | Melbourne Victory FC        | Australia            |               26 |
+| DARIO VIDOSIC              | FC Sion                     | Australia            |               27 |
+| AXEL WITSEL                | FC Zenit St. Petersburg     | Belgium              |               25 |
+| LAURENT CIMAN              | Standard Liege              | Belgium              |               29 |
+| STEVEN DEFOUR              | FC Porto                    | Belgium              |               26 |
+| MOUSSA DEMBELE             | Tottenham Hotspur FC        | Belgium              |               27 |
+| TOBY ALDERWEIRELD          | Atletico Madrid             | Belgium              |               25 |
+| MAROUANE FELLAINI          | Manchester United FC        | Belgium              |               27 |
+| KEVIN MIRALLAS             | Everton FC                  | Belgium              |               27 |
+| JAN VERTONGHEN             | Tottenham Hotspur FC        | Belgium              |               27 |
+| NICOLAS NKOULOU            | Olympique Marseille         | Cameroon             |               24 |
+| ISMAEL TIOTE               | Newcastle United FC         | Ivory Coast          |               28 |
+| OUSMANE DIARRASSOUBA       | Caykur Rizespor             | Ivory Coast          |               28 |
+| YUTO NAGATOMO              | FC Internazionale           | Japan                |               28 |
+| KIM BOKYUNG                | Cardiff City FC             | South Korea          |               25 |
+| KOO JACHEOL                | FSV Mainz 05                | South Korea          |               25 |
+| PARK JONGWOO               | Guangzhou R&F FC            | South Korea          |               25 |
+| KWADWO ASAMOAH             | Juventus FC                 | Ghana                |               26 |
+| ANDRE AYEW                 | Olympique Marseille         | Ghana                |               25 |
+| HARRISON AFFUL             | Esperance Sportive de Tunis | Ghana                |               28 |
+| JAMES HOLLAND              | FK Austria Wien             | Australia            |               25 |
+| AHMAD ALNAMEH              | Naft Tehran FC              | Iran                 |               32 |
+| HASHEM BEIKZADEH           | Esteghlal Tehran FC         | Iran                 |               30 |
+| BENJAMIN MOUKANDJO         | AS Nancy                    | Cameroon             |               26 |
+| ALEJANDRO BEDOYA           | FC Nantes                   | USA                  |               27 |
+| MARIO MARTINEZ             | Real Espana                 | Honduras             |               25 |
+| JUAN CARLOS GARCIA         | Wigan Athletic FC           | Honduras             |               26 |
+| EDDER DELGADO              | Real Espana                 | Honduras             |               28 |
+| IVAN RAKITIC               | Sevilla FC                  | Croatia              |               26 |
+| RAFIK HALLICHE             | Academica Coimbra           | Algeria              |               28 |
+| EL ARABI SOUDANI           | GNK Dinamo Zagreb           | Algeria              |               27 |
+| KARIM BENZEMA              | Real Madrid CF              | France               |               27 |
+| HUGO LLORIS                | Tottenham Hotspur FC        | France               |               28 |
+| MATHIEU VALBUENA           | Olympique Marseille         | France               |               30 |
+| GEORGIOS SAMARAS           | Celtic FC                   | Greece               |               29 |
+| OSMAN CHAVEZ               | Qingdao Jonoon FC           | Honduras             |               30 |
+| VALENTIN STOCKER           | FC Basel                    | Switzerland          |               25 |
+| VEDRAN CORLUKA             | FC Lokomotiv Moscow         | Croatia              |               28 |
+| OGNJEN VUKOJEVIC           | FC Dynamo Kyiv              | Croatia              |               31 |
+| ROMAN SHIROKOV             | FC Krasnodar                | Russia               |               33 |
+| SANTI CAZORLA              | Arsenal FC                  | Spain                |               30 |
+| KONAN YA                   | Hannover 96                 | Ivory Coast          |               30 |
+| RAHMAN AHMADI              | Sepahan FC                  | Iran                 |               34 |
+| JOHN BOYE                  | Stade Rennais FC            | Ghana                |               27 |
+| HENRIQUE ADRIANO BUSS      | SSC Napoli                  | Brazil               |               28 |
+| SALVATORE SIRIGU           | Paris Saint-Germain FC      | Italy                |               27 |
+| ANTONIO CANDREVA           | SS Lazio                    | Italy                |               27 |
+| CLAUDIO MARCHISIO          | Juventus FC                 | Italy                |               28 |
+| HA DAESUNG                 | Beijing Guoan               | South Korea          |               29 |
+| JONATHAN DE GUZMAN         | Swansea City AFC            | Netherlands          |               27 |
+| JEREMAIN LENS              | FC Dynamo Kyiv              | Netherlands          |               27 |
+| SIMON MIGNOLET             | Liverpool FC                | Belgium              |               26 |
+| AUGUSTO FERNANDEZ          | Celta Vigo                  | Argentina            |               28 |
+| RAMIRES SANTOS             | Chelsea FC                  | Brazil               |               27 |
+| RUBEN AMORIM               | SL Benfica                  | Portugal             |               29 |
+| EDUARDO CARVALHO           | Sporting Braga              | Portugal             |               32 |
+| LAZAROS CHRISTODOULOPOULOS | Bologna FC                  | Greece               |               28 |
+| SOKRATIS PAPASTATHOPOULOS  | Borussia Dortmund           | Greece               |               26 |
+| MIRALEM PJANIC             | AS Roma                     | Bosnia & Herzegovina |               24 |
+| JEROME BOATENG             | FC Bayern Muenchen          | Germany              |               26 |
+| LOIC REMY                  | Newcastle United FC         | France               |               27 |
+| DANIJEL SUBASIC            | AS Monaco                   | Croatia              |               30 |
+| DOMAGOJ VIDA               | FC Dynamo Kyiv              | Croatia              |               25 |
+| MENSUR MUJDZA              | SC Freiburg                 | Bosnia & Herzegovina |               30 |
+| JOE HART                   | Manchester City FC          | England              |               27 |
+| PHIL JAGIELKA              | Everton FC                  | England              |               32 |
+| VICTOR FAYZULIN            | FC Zenit St. Petersburg     | Russia               |               28 |
+| DMITRY KOMBAROV            | FC Spartak Moscow           | Russia               |               27 |
+| SENIJAD IBRICIC            | Kayseri Erciyesspor         | Bosnia & Herzegovina |               29 |
+| SEJAD SALIHOVIC            | TSG 1899 Hoffenheim         | Bosnia & Herzegovina |               30 |
+| EDIN DZEKO                 | Manchester City FC          | Bosnia & Herzegovina |               28 |
+| VEDAD IBISEVIC             | VfB Stuttgart               | Bosnia & Herzegovina |               30 |
+| MARIO BALOTELLI            | AC Milan                    | Italy                |               24 |
+| OSCAR GRANADOS             | CS Herediano                | Costa Rica           |               29 |
+| RON-ROBERT ZIELER          | Hannover 96                 | Germany              |               25 |
+| ALAN DZAGOEV               | CSKA Moscow                 | Russia               |               24 |
+| MAXIMO BANGUERA            | Barcelona SC                | Ecuador              |               29 |
+| SERGIO BUSQUETS            | FC Barcelona                | Spain                |               26 |
+| CARLOS PENA                | Club Leon                   | Mexico               |               24 |
+| ALEXANDER DOMINGUEZ        | LDU Quito                   | Ecuador              |               27 |
+| ROGER ESPINOZA             | Wigan Athletic FC           | Honduras             |               28 |
+| MESUT OEZIL                | Arsenal FC                  | Germany              |               26 |
+| ABEL HERNANDEZ             | US Citta di Palermo         | Uruguay              |               24 |
+| NICOLAS LODEIRO            | Botafogo FR                 | Uruguay              |               25 |
+| SEBASTIAN COATES           | Club Nacional de Football   | Uruguay              |               24 |
+| MOHAMED ZEMMAMOUCHE        | USM Alger                   | Algeria              |               29 |
+| GARY CAHILL                | Chelsea FC                  | England              |               29 |
+| LEIGHTON BAINES            | Everton FC                  | England              |               30 |
+| JOAO ROJAS                 | Cruz Azul FC                | Ecuador              |               25 |
+| MARIANO ANDUJAR            | Calcio Catania              | Argentina            |               31 |
+| BENOIT ASSOU EKOTTO        | Queens Park Rangers FC      | Cameroon             |               30 |
+| KHOSRO HEYDARI             | Esteghlal Tehran FC         | Iran                 |               31 |
+| JASON DAVIDSON             | SC Heracles Almelo          | Australia            |               23 |
+| RYAN MCGOWAN               | Shandong Luneng Taishan FC  | Australia            |               25 |
+| TOMMY OAR                  | FC Utrecht                  | Australia            |               23 |
+| DANIEL STURRIDGE           | Liverpool FC                | England              |               25 |
+| ANDRE SCHUERRLE            | Chelsea FC                  | Germany              |               24 |
+| JONATHAN MENSAH            | Evian TG FC                 | Ghana                |               24 |
+| CIRO IMMOBILE              | Torino FC                   | Italy                |               24 |
+| LEE BUMYOUNG               | Busan IPark FC              | South Korea          |               25 |
+| OKECHUKWU UCHEBO           | Cercle Brugge               | Nigeria              |               24 |
+| JORDI ALBA                 | FC Barcelona                | Spain                |               25 |
+| CRISTIAN GAMBOA            | Rosenborg BK                | Costa Rica           |               25 |
+| JOEL CAMPBELL              | Olympiacos Piraeus FC       | Costa Rica           |               22 |
+| YELTSIN TEJEDA             | Deportivo Saprissa          | Costa Rica           |               22 |
+| SON HEUNGMIN               | Bayer 04 Leverkusen         | South Korea          |               22 |
+| DIEGO REYES                | FC Porto                    | Mexico               |               22 |
+| MARIO GOETZE               | FC Bayern Muenchen          | Germany              |               22 |
+| MATTIA PERIN               | Genoa CFC                   | Italy                |               22 |
+| VICTOR LEANDRO BAGY        | Atletico Mineiro            | Brazil               |               31 |
+| JUAN CUADRADO              | ACF Fiorentina              | Columbia             |               26 |
+| TEOFILO GUTIERREZ          | CA River Plate              | Columbia             |               29 |
+| ENOH EYONG                 | Antalyaspor AS              | Cameroon             |               28 |
+| BENEDIKT HOEWEDES          | FC Schalke 04               | Germany              |               26 |
+| MATS HUMMELS               | Borussia Dortmund           | Germany              |               26 |
+| FABIAN JOHNSON             | TSG 1899 Hoffenheim         | USA                  |               27 |
+| HARIS SEFEROVIC            | Real Sociedad               | Switzerland          |               22 |
+| GRANIT XHAKA               | Borussia Moenchengladbach   | Switzerland          |               22 |
+| MOHAMMED RABIU             | Kuban Krasnodar             | Ghana                |               25 |
+| MICHAEL BABATUNDE          | FC Volyn Lutsk              | Nigeria              |               22 |
+| GASTON RAMIREZ             | Southampton FC              | Uruguay              |               24 |
+| OLIVER BOZANIC             | FC Luzern                   | Australia            |               25 |
+| ERIC CHOUPO MOTING         | FSV Mainz 05                | Cameroon             |               25 |
+| DEJAN LOVREN               | Southampton FC              | Croatia              |               25 |
+| MIX DISKERUD               | Rosenborg BK                | USA                  |               24 |
+| HONG JEONGHO               | FC Augsburg                 | South Korea          |               25 |
+| OSCAR DOS SANTOS JR.       | Chelsea FC                  | Brazil               |               23 |
+| OSCAR DUARTE               | Club Brugge KV              | Costa Rica           |               25 |
+| STEFAN DE VRIJ             | Feyenoord Rotterdam         | Netherlands          |               22 |
+| JOEL VELTMAN               | AFC Ajax                    | Netherlands          |               22 |
+| KOKE MERODIO               | Atletico Madrid             | Spain                |               22 |
+| RICARDO RODRIGUEZ          | VfL Wolfsburg               | Switzerland          |               22 |
+| HEINER MORA                | Deportivo Saprissa          | Costa Rica           |               30 |
+| JACKSON MARTINEZ           | FC Porto                    | Columbia             |               28 |
+| ESTEBAN PAREDES            | CSD Colo-Colo               | Chile                |               34 |
+| NEYMAR SANTOS JR.          | FC Barcelona                | Brazil               |               22 |
+| KENNETH OMERUO             | Middlesbrough FC            | Nigeria              |               21 |
+| OGENYI ONAZI               | SS Lazio                    | Nigeria              |               22 |
+| RAMON AZEEZ                | UD Almeria                  | Nigeria              |               22 |
+| SANTIAGO ARIAS             | PSV Eindhoven               | Columbia             |               22 |
+| NIKICA JELAVIC             | Hull City FC                | Croatia              |               29 |
+| ENZO PEREZ                 | SL Benfica                  | Argentina            |               28 |
+| MOUSSA SISSOKO             | Newcastle United FC         | France               |               25 |
+| HENRI BEDIMO               | Olympique Lyonnais          | Cameroon             |               30 |
+| FEDERICO FERNANDEZ         | SSC Napoli                  | Argentina            |               25 |
+| CHARLES ARANGUIZ           | SC Internacional            | Chile                |               25 |
+| HULK DE SOUSA              | FC Zenit St. Petersburg     | Brazil               |               28 |
+| PEDRO RODRIGUEZ            | FC Barcelona                | Spain                |               27 |
+| MARCOS ROJO                | Sporting CP                 | Argentina            |               24 |
+| KONSTANTINOS MITROGLOU     | Fulham FC                   | Greece               |               26 |
+| GEORGIOS TZAVELAS          | PAOK FC                     | Greece               |               27 |
+| MARCO FABIAN               | Cruz Azul FC                | Mexico               |               25 |
+| ELIAQUIM MANGALA           | FC Porto                    | France               |               23 |
+| SOFIANE FEGHOULI           | Valencia CF                 | Algeria              |               25 |
+| PANAGIOTIS TACHTSIDIS      | Torino FC                   | Greece               |               23 |
+| DARYL JANMAAT              | Feyenoord Rotterdam         | Netherlands          |               25 |
+| DALEY BLIND                | AFC Ajax                    | Netherlands          |               24 |
+| LEROY FER                  | Norwich City FC             | Netherlands          |               24 |
+| GEORGINIO WIJNALDUM        | PSV Eindhoven               | Netherlands          |               24 |
+| YANN SOMMER                | FC Basel                    | Switzerland          |               26 |
+| MARIO GAVRANOVIC           | FC Zuerich                  | Switzerland          |               25 |
+| RODRIGO MUNOZ              | Club Libertad               | Uruguay              |               32 |
+| JOEL MATIP                 | FC Schalke 04               | Cameroon             |               23 |
+| LEONARDO BONUCCI           | Juventus FC                 | Italy                |               27 |
+| XHERDAN SHAQIRI            | FC Bayern Muenchen          | Switzerland          |               23 |
+| MEDHI LACEN                | Getafe CF                   | Algeria              |               30 |
+| MATHEW LECKIE              | FSV Frankfurt               | Australia            |               23 |
+| THOMAS MUELLER             | FC Bayern Muenchen          | Germany              |               25 |
+| IOANNIS MANIATIS           | Olympiacos Piraeus FC       | Greece               |               28 |
+| SHUICHI GONDA              | FC Tokyo                    | Japan                |               25 |
+| GOTOKU SAKAI               | VfB Stuttgart               | Japan                |               23 |
+| KIM SHINWOOK               | Ulsan Hyundai FC            | South Korea          |               26 |
+| GEOFF CAMERON              | Stoke City FC               | USA                  |               29 |
+| RAIS MBOLHI                | CSKA Sofia                  | Algeria              |               28 |
+| DJAMEL MESBAH              | AS Livorno                  | Algeria              |               30 |
+| KONSTANTINOS MANOLAS       | Olympiacos Piraeus FC       | Greece               |               23 |
+| STEPHEN ADAMS              | Aduana Stars                | Ghana                |               25 |
+| JERRY BENGTSON             | New England Revolution      | Honduras             |               27 |
+| VINCENT ABOUBAKAR          | FC Lorient                  | Cameroon             |               22 |
+| HECTOR HERRERA             | FC Porto                    | Mexico               |               24 |
+| GHASEM HADADIFAR           | Zob Ahan Isfahan FC         | Iran                 |               31 |
+| HOSSEIN MAHINI             | Perspolis FC                | Iran                 |               28 |
+| JACK WILSHERE              | Arsenal FC                  | England              |               22 |
+| KARIM ANSARI FARD          | Tractor Sazi Tabriz FC      | Iran                 |               24 |
+| JI DONGWON                 | FC Augsburg                 | South Korea          |               23 |
+| ANDY NAJAR                 | RSC Anderlecht              | Honduras             |               21 |
+| GIOVANNI SIO               | FC Basel                    | Ivory Coast          |               25 |
+| CARLOS GRUEZO              | VfB Stuttgart               | Ecuador              |               19 |
+| RAHEEM STERLING            | Liverpool FC                | England              |               20 |
+| TERENCE KONGOLO            | Feyenoord Rotterdam         | Netherlands          |               20 |
+| MEMPHIS DEPAY              | PSV Eindhoven               | Netherlands          |               20 |
+| CLEMENT GRENIER            | Olympique Lyonnais          | France               |               23 |
+| ANTOINE GRIEZMANN          | Real Sociedad               | France               |               23 |
+| LUKE SHAW                  | Southampton FC              | England              |               19 |
+| SIME VRSALJKO              | Genoa CFC                   | Croatia              |               22 |
+| ALAN PULIDO                | Tigres UANL                 | Mexico               |               23 |
+| EDGAR SALLI                | RC Lens                     | Cameroon             |               22 |
+| DIEGO CALVO                | Valerenga IF                | Costa Rica           |               23 |
+| ALEX IBARRA                | Vitesse Arnheim             | Ecuador              |               23 |
+| UCHE NWOFOR                | SC Heerenveen               | Nigeria              |               23 |
+| MASSIMO LUONGO             | Swindon Town FC             | Australia            |               22 |
+| MATY RYAN                  | Club Brugge KV              | Australia            |               22 |
+| JOHNNY ACOSTA              | LD Alajuelense              | Costa Rica           |               31 |
+| CHRIS WONDOLOWSKI          | San Jose Earthquakes        | USA                  |               31 |
+| BRAYAN BECKELES            | CD Olimpia                  | Honduras             |               29 |
+| MATEO KOVACIC              | FC Internazionale           | Croatia              |               20 |
+| AHMED MUSA                 | CSKA Moscow                 | Nigeria              |               22 |
+| BAKHTIAR RAHMANI           | Foolad Khuzestan FC         | Iran                 |               23 |
+| ALIREZA HAGHIGHI           | Sporting Covilha            | Iran                 |               26 |
+| HIROSHI KIYOTAKE           | 1. FC Nuernberg             | Japan                |               25 |
+| CARLOS BACCA               | Sevilla FC                  | Columbia             |               28 |
+| VICTOR IBARBO              | Cagliari Calcio             | Columbia             |               24 |
+| ADRIAN BONE                | CD El Nacional              | Ecuador              |               26 |
+| JAIMEN AYOVI               | Club Tijuana                | Ecuador              |               26 |
+| MICHAEL ARROYO             | Atlante FC                  | Ecuador              |               27 |
+| JUAN PAREDES               | Barcelona SC                | Ecuador              |               27 |
+| FRICKSON ERAZO             | CR Flamengo                 | Ecuador              |               26 |
+| FRANCISCO SILVA            | CA Osasuna                  | Chile                |               28 |
+| FELIPE GUTIERREZ           | FC Twente                   | Chile                |               24 |
+| EUGENIO MENA               | Santos FC                   | Chile                |               26 |
+| RICARDO ALVAREZ            | FC Internazionale           | Argentina            |               26 |
+| JOSE MARIA BASANTA         | CF Monterrey                | Argentina            |               30 |
+| HIROKI SAKAI               | Hannover 96                 | Japan                |               24 |
+| JAVIER AQUINO              | Villarreal CF               | Mexico               |               24 |
+| MIGUEL PONCE               | Deportivo Toluca FC         | Mexico               |               25 |
+| MARCO REUS                 | Borussia Dortmund           | Germany              |               25 |
+| WILFRIED BONY              | Swansea City AFC            | Ivory Coast          |               26 |
+| MAX GRADEL                 | AS Saint-Etienne            | Ivory Coast          |               27 |
+| JORDAN AYEW                | FC Sochaux-Montbliard       | Ghana                |               23 |
+| ADAM KWARASEY              | Stromsgodset IF             | Ghana                |               27 |
+| REZA HAGHIGHI              | Perspolis FC                | Iran                 |               25 |
+| ISLAM SLIMANI              | Sporting CP                 | Algeria              |               26 |
+| MEHDI MOSTEFA              | AC Ajaccio                  | Algeria              |               31 |
+| ABDELMOUMENE DJABOU        | Club Africain               | Algeria              |               27 |
+| LIASSINE CADAMURO          | RCD Mallorca                | Algeria              |               26 |
+| ALLAN NYOM                 | Granada CF                  | Cameroon             |               26 |
+| LOIC FEUDJOU               | Coton Sport FC              | Cameroon             |               22 |
+| CHRISTIAN ATSU             | Vitesse Arnheim             | Ghana                |               22 |
+| ESSEID BELKALEM            | Watford FC                  | Algeria              |               25 |
+| CEDRIC SI MOHAMMED         | CS Constantine              | Algeria              |               29 |
+| JORDAN HENDERSON           | Liverpool FC                | England              |               24 |
+| ALEX OXLADE CHAMBERLAIN    | Arsenal FC                  | England              |               21 |
+| JOSIP DRMIC                | 1. FC Nuernberg             | Switzerland          |               22 |
+| IZET HAJROVIC              | Galatasaray SK              | Bosnia & Herzegovina |               23 |
+| MICHAEL LANG               | Grasshopper Club            | Switzerland          |               23 |
+| ADMIR MEHMEDI              | SC Freiburg                 | Switzerland          |               23 |
+| FABIAN SCHAER              | FC Basel                    | Switzerland          |               23 |
+| GODFREY OBOABONA           | Caykur Rizespor             | Nigeria              |               24 |
+| HOTARU YAMAGUCHI           | Cerezo Osaka                | Japan                |               24 |
+| HWANG SEOKHO               | Sanfrecce Hiroshima         | South Korea          |               25 |
+| HUGO CAMPAGNARO            | FC Internazionale           | Argentina            |               34 |
+| BERNARD DUARTE             | Shakhtar Donetsk            | Brazil               |               22 |
+| ROMAN BUERKI               | Grasshopper Club            | Switzerland          |               24 |
+| JUAN QUINTERO              | FC Porto                    | Columbia             |               21 |
+| RUBEN GABRIEL              | KV Waasland-Beveren         | Nigeria              |               24 |
+| AZUBUIKE EGWUEKWE          | Warri Wolves FC             | Nigeria              |               25 |
+| JUWON OSHANIWA             | FC Ashdod                   | Nigeria              |               24 |
+| RAUL JIMENEZ               | Club America                | Mexico               |               23 |
+| CHRIS SMALLING             | Manchester United FC        | England              |               25 |
+| MITCH LANGERAK             | Borussia Dortmund           | Australia            |               26 |
+| GORDON SCHILDENFELD        | Panathinaikos FC            | Croatia              |               29 |
+| PHIL JONES                 | Manchester United FC        | England              |               22 |
+| MATHIEU DEBUCHY            | Newcastle United FC         | France               |               29 |
+| LAURENT KOSCIELNY          | Arsenal FC                  | France               |               29 |
+| YOHAN CABAYE               | Paris Saint-Germain FC      | France               |               28 |
+| BLAISE MATUIDI             | Paris Saint-Germain FC      | France               |               27 |
+| OLIVIER GIROUD             | Arsenal FC                  | France               |               28 |
+| JOSE CHOLEVAS              | Olympiacos Piraeus FC       | Greece               |               30 |
+| IOANNIS FETFATZIDIS        | Genoa CFC                   | Greece               |               24 |
+| VLADIMIR GRANAT            | FC Dynamo Moscow            | Russia               |               27 |
+| ALEXANDER KOKORIN          | FC Dynamo Moscow            | Russia               |               23 |
+| DENIS GLUSHAKOV            | FC Spartak Moscow           | Russia               |               27 |
+| ASMIR AVDUKIC              | FK Borac Banja Luka         | Bosnia & Herzegovina |               33 |
+| SENAD LULIC                | SS Lazio                    | Bosnia & Herzegovina |               28 |
+| MUHAMED BESIC              | Ferencvarosi TC             | Bosnia & Herzegovina |               22 |
+| THIBAUT COURTOIS           | Atletico Madrid             | Belgium              |               22 |
+| NACER CHADLI               | Tottenham Hotspur FC        | Belgium              |               25 |
+| ROMELU LUKAKU              | Everton FC                  | Belgium              |               21 |
+| DRIES MERTENS              | SSC Napoli                  | Belgium              |               27 |
+| KEVIN DE BRUYNE            | VfL Wolfsburg               | Belgium              |               23 |
+| JULIAN DRAXLER             | FC Schalke 04               | Germany              |               21 |
+| KEVIN GROSSKREUTZ          | Borussia Dortmund           | Germany              |               26 |
+| JORDY CLASIE               | Feyenoord Rotterdam         | Netherlands          |               23 |
+| BRUNO MARTINS INDI         | Feyenoord Rotterdam         | Netherlands          |               22 |
+| JASPER CILLESSEN           | AFC Ajax                    | Netherlands          |               25 |
+| GEORGY SHCHENNIKOV         | CSKA Moscow                 | Russia               |               23 |
+| ALEXEY IONOV               | FC Dynamo Moscow            | Russia               |               25 |
+| MAKSIM KANUNNIKOV          | FK Amkar Perm               | Russia               |               23 |
+| OLEG SHATOV                | FC Zenit St. Petersburg     | Russia               |               24 |
+| ANDREY ESHCHENKO           | FC Anzhi Makhachkala        | Russia               |               30 |
+| MARCO VERRATTI             | Paris Saint-Germain FC      | Italy                |               22 |
+| MATTIA DE SCIGLIO          | AC Milan                    | Italy                |               22 |
+| LORENZO INSIGNE            | SSC Napoli                  | Italy                |               23 |
+| SAMMIR CRUZ CAMPOS         | Getafe CF                   | Croatia              |               27 |
+| IVAN PERISIC               | VfL Wolfsburg               | Croatia              |               25 |
+| LUIS NETO                  | FC Zenit St. Petersburg     | Portugal             |               26 |
+| EDER LOPES                 | Sporting Braga              | Portugal             |               27 |
+| RAPHAEL VARANE             | Real Madrid CF              | France               |               21 |
+| STEPHANE RUFFIER           | AS Saint-Etienne            | France               |               28 |
+| TONI SUNJIC                | FC Zorya Lugansk            | Bosnia & Herzegovina |               26 |
+| OGNJEN VRANJES             | Elazigspor                  | Bosnia & Herzegovina |               25 |
+| AVDIJA VRSAJEVIC           | HNK Hajduk Split            | Bosnia & Herzegovina |               28 |
+| PANAGIOTIS KONE            | Bologna FC                  | Greece               |               27 |
+| PANAGIOTIS GLYKOS          | PAOK FC                     | Greece               |               28 |
+| CAMILO VARGAS              | Independiente Santa Fe      | Columbia             |               25 |
+| GRAHAM ZUSI                | Sporting Kansas City        | USA                  |               28 |
+| ADAM LALLANA               | Southampton FC              | England              |               26 |
+| REZA GHOOCHANNEJAD         | Charlton Athletic FC        | Iran                 |               27 |
+| STEFANOS KAPINO            | Panathinaikos FC            | Greece               |               20 |
+| ANDREAS SAMARIS            | Olympiacos Piraeus FC       | Greece               |               25 |
+| PAULINHO MACIEL JR.        | Tottenham Hotspur FC        | Brazil               |               26 |
+| FRASER FORSTER             | Celtic FC                   | England              |               26 |
+| LEE YONG                   | Ulsan Hyundai FC            | South Korea          |               28 |
+| FAOUZI GHOULAM             | SSC Napoli                  | Algeria              |               23 |
+| ALBERT ADOMAH              | Middlesbrough FC            | Ghana                |               27 |
+| EMMANUEL EMENIKE           | Fenerbahce SK               | Nigeria              |               27 |
+| JUAN MONTES                | CD Motagua                  | Honduras             |               29 |
+| TIMMY CHANDLER             | 1. FC Nuernberg             | USA                  |               24 |
+| EDIN VISCA                 | Istanbul BBSK               | Bosnia & Herzegovina |               24 |
+| YACINE BRAHIMI             | Granada CF                  | Algeria              |               24 |
+| SAPHIR TAIDER              | FC Internazionale           | Algeria              |               22 |
+| NABIL GHILAS               | FC Porto                    | Algeria              |               24 |
+| SERGEY RYZHIKOV            | FC Rubin Kazan              | Russia               |               34 |
+| YURY LODYGIN               | FC Zenit St. Petersburg     | Russia               |               24 |
+| ARON JOHANNSSON            | AZ Alkmaar                  | USA                  |               24 |
+| PAUL POGBA                 | Juventus FC                 | France               |               21 |
+| MAJEED WARIS               | Valenciennes FC             | Ghana                |               23 |
+| FABRICE OLINGA             | SV Zulte Waregem            | Cameroon             |               18 |
+| JASMIN FEJZIC              | VfR Aalen                   | Bosnia & Herzegovina |               28 |
+| MATT BESLER                | Sporting Kansas City        | USA                  |               27 |
+| DIE SEREY                  | FC Basel                    | Ivory Coast          |               30 |
+| JEAN DANIEL AKPA           | Toulouse FC                 | Ivory Coast          |               22 |
+| SYLVAIN GBOHOUO            | Sewe Sport                  | Ivory Coast          |               26 |
+| DANTE SANTOS               | FC Bayern Muenchen          | Brazil               |               31 |
+| LUIZ GUSTAVO               | VfL Wolfsburg               | Brazil               |               27 |
+| DIEGO COSTA                | Atletico Madrid             | Spain                |               26 |
+| EBENEZER ODUNLAMI          | Sunshine Stars FC           | Nigeria              |               23 |
+| JOSE GIMENEZ               | Atletico Madrid             | Uruguay              |               19 |
+| RAFA SILVA                 | Sporting Braga              | Portugal             |               21 |
+| LUCAS DIGNE                | Paris Saint-Germain FC      | France               |               21 |
+| ADAM TAGGART               | Newcastle United Jets FC    | Australia            |               21 |
+| DEANDRE YEDLIN             | Seattle Sounders FC         | USA                  |               21 |
+| OLIVER ZELENIKA            | NK Lokomotiva Zagreb        | Croatia              |               21 |
+| IVAN MOCINIC               | HNK Rijeka                  | Croatia              |               21 |
+| ANTE REBIC                 | ACF Fiorentina              | Croatia              |               21 |
+| JULIAN GREEN               | FC Bayern Muenchen          | USA                  |               19 |
+| ROSS BARKLEY               | Everton FC                  | England              |               21 |
+| EDER BALANTA               | CA River Plate              | Columbia             |               21 |
+| ALEKSEI KOZLOV             | FC Dynamo Moscow            | Russia               |               28 |
+| RONY MARTINEZ              | CD Real Sociedad            | Honduras             |               27 |
+| IVAN FRANJIC               | Brisbane Roar FC            | Australia            |               27 |
+| SAMMY NDJOCK               | Fethiyespor                 | Cameroon             |               24 |
+| RASHID SUMAILA             | Mamelodi Sundowns FC        | Ghana                |               22 |
+| SERGE AURIER               | Toulouse FC                 | Ivory Coast          |               22 |
+| MATHIS BOLLY               | Fortuna Duesseldorf         | Ivory Coast          |               24 |
+| ISAAC BRIZUELA             | Deportivo Toluca FC         | Mexico               |               24 |
+| MIGUEL LAYUN               | Club America                | Mexico               |               26 |
+| ERMIN BICAKCIC             | Eintracht Braunschweig      | Bosnia & Herzegovina |               24 |
+| RICKIE LAMBERT             | Southampton FC              | England              |               32 |
+| ENNER VALENCIA             | CF Pachuca                  | Ecuador              |               25 |
+| JOHN BROOKS                | Hertha BSC                  | USA                  |               21 |
+| ANEL HADZIC                | SK Sturm Graz               | Bosnia & Herzegovina |               25 |
+| ANDRE ALMEIDA              | SL Benfica                  | Portugal             |               24 |
+| FIDEL MARTINEZ             | Club Tijuana                | Ecuador              |               24 |
+| MARIO MANDZUKIC            | FC Bayern Muenchen          | Croatia              |               28 |
+| DANIEL VAN BUYTEN          | FC Bayern Muenchen          | Belgium              |               36 |
+| KIM YOUNGGWON              | Guangzhou Evergrande FC     | South Korea          |               24 |
+| FATAWU DAUDA               | Orlando Pirates             | Ghana                |               29 |
+| SEAD KOLASINAC             | FC Schalke 04               | Bosnia & Herzegovina |               21 |
+| AISSA MANDI                | Stade de Reims              | Algeria              |               23 |
+| WILLIAM CARVALHO           | Sporting CP                 | Portugal             |               22 |
+| ISMAEL DIOMANDE            | AS Saint-Etienne            | Ivory Coast          |               22 |
+| MARCO PAROLO               | Parma FC                    | Italy                |               29 |
+| BEN HALLORAN               | Fortuna Duesseldorf         | Australia            |               22 |
+| BAILEY WRIGHT              | Preston North End FC        | Australia            |               22 |
+| JOSE VAZQUEZ               | Club Leon                   | Mexico               |               26 |
+| MATTHIAS GINTER            | SC Freiburg                 | Germany              |               20 |
+| TINO SVEN SUSIC            | HNK Hajduk Split            | Bosnia & Herzegovina |               22 |
+| ALIREZA JAHAN BAKHSH       | NEC Nijmegen                | Iran                 |               21 |
+| DANIEL DAVARI              | Eintracht Braunschweig      | Iran                 |               26 |
+| STEVEN BEITASHOUR          | Vancouver Whitecaps FC      | Iran                 |               27 |
+| MIIKO ALBORNOZ             | Malmo FF                    | Chile                |               24 |
+| ADNAN JANUZAJ              | Manchester United FC        | Belgium              |               19 |
+| DIVOCK ORIGI               | Lille OSC                   | Belgium              |               19 |
+| NABIL BENTALEB             | Tottenham Hotspur FC        | Algeria              |               20 |
+| RIYAD MAHREZ               | Leicester City FC           | Algeria              |               23 |
+| ERIK DURM                  | Borussia Dortmund           | Germany              |               22 |
+| ACQUAH AFRIYIE             | Parma FC                    | Ghana                |               22 |
+| WAYLON FRANCIS             | Columbus Crew               | Costa Rica           |               24 |
+| ANDREY SEMENOV             | FC Terek Grozny             | Russia               |               25 |
+| MARCELO BROZOVIC           | GNK Dinamo Zagreb           | Croatia              |               22 |
+| SAYOUBA MANDE              | Stabaek IF                  | Ivory Coast          |               21 |
+| LUIS LOPEZ                 | Real Espana                 | Honduras             |               21 |
+| CEDRIC DJEUGOUE            | Coton Sport FC              | Cameroon             |               22 |
+| CHRISTOPH KRAMER           | Borussia Moenchengladbach   | Germany              |               23 |
+| SAMMY BOSSUT               | SV Zulte Waregem            | Belgium              |               29 |
++----------------------------+-----------------------------+----------------------+------------------+
+736 rows in set (0.00 sec)
+
+mysql> SELECT Country_Name from COUNTRY WHERE No_of_worldcup_won>2;
++--------------+
+| Country_Name |
++--------------+
+| Brazil       |
+| Germany      |
+| Italy        |
++--------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT Country_Name from COUNTRY WHERE No_of_worldcup_won=0;
++----------------------+
+| Country_Name         |
++----------------------+
+| Algeria              |
+| Australia            |
+| Belgium              |
+| Bosnia & Herzegovina |
+| Cameroon             |
+| Chile                |
+| Columbia             |
+| Costa Rica           |
+| Croatia              |
+| Ecuador              |
+| Ghana                |
+| Greece               |
+| Honduras             |
+| Iran                 |
+| Ivory Coast          |
+| Japan                |
+| Mexico               |
+| Netherlands          |
+| Nigeria              |
+| Portugal             |
+| Russia               |
+| South Korea          |
+| Switzerland          |
+| USA                  |
++----------------------+
+24 rows in set (0.00 sec)
+
+mysql> SELECT Name, Country FROM PLAYERS, PLAYER_CARDS WHERE Yellow_Cards=0 AND Red_Cards=0 AND PLAYERS.Player_id=PLAYER_CARDS.Player_id;
+Empty set (0.00 sec)
+
+mysql> SELECT Name, Country FROM PLAYERS, PLAYER_CARDS WHERE PLAYERS.Player_id=PLAYER_CARDS.Player_id AND Red_Cards = 1;
++--------------------------+------------+
+| Name                     | Country    |
++--------------------------+------------+
+| ALEXANDRE SONG           | Cameroon   |
+| ANTONIO VALENCIA         | Ecuador    |
+| WILSON PALACIOS          | Honduras   |
+| KONSTANTINOS KATSOURANIS | Greece     |
+| PEPE FERREIRA            | Portugal   |
+| MAXIMILIANO PEREIRA      | Uruguay    |
+| STEVEN DEFOUR            | Belgium    |
+| CLAUDIO MARCHISIO        | Italy      |
+| OSCAR DUARTE             | Costa Rica |
+| ANTE REBIC               | Croatia    |
++--------------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT Hosty_City, COUNT(Hosty_city) AS No_of_games FROM MATCH_RESULTS GROUP BY Hosty_City;
++----------------+-------------+
+| Hosty_City     | No_of_games |
++----------------+-------------+
+| Sao Paulo      |           6 |
+| Natal          |           4 |
+| Salvador       |           6 |
+| Cuiaba         |           4 |
+| Belo Horizonte |           6 |
+| Recife         |           5 |
+| Fortaleza      |           6 |
+| Manaus         |           4 |
+| Brasilia       |           7 |
+| Porto Alegre   |           5 |
+| Rio De Janerio |           7 |
+| Curitiba       |           4 |
++----------------+-------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT Hosty_City, COUNT(Hosty_City) AS MostGamesPlayed FROM MATCH_RESULTS GROUP BY Hosty_City ORDER BY COUNT(Hosty_City) DESC LIMIT 2;
++----------------+-----------------+
+| Hosty_City     | MostGamesPlayed |
++----------------+-----------------+
+| Rio De Janerio |               7 |
+| Brasilia       |               7 |
++----------------+-----------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT Country_Name, COUNT(Team1),SUM(Team1_score), SUM(Team2_score) FROM MATCH_RESULTS,COUNTRY WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team1 GROUP BY Country_Name;
++----------------------+--------------+------------------+------------------+
+| Country_Name         | COUNT(Team1) | SUM(Team1_score) | SUM(Team2_score) |
++----------------------+--------------+------------------+------------------+
+| Algeria              |            1 |                1 |                1 |
+| Argentina            |            4 |                5 |                1 |
+| Australia            |            2 |                2 |                6 |
+| Belgium              |            3 |                5 |                2 |
+| Bosnia & Herzegovina |            1 |                3 |                1 |
+| Brazil               |            6 |                7 |               13 |
+| Cameroon             |            2 |                1 |                8 |
+| Chile                |            1 |                3 |                1 |
+| Columbia             |            3 |                7 |                1 |
+| Costa Rica           |            2 |                1 |                1 |
+| Croatia              |            1 |                1 |                3 |
+| Ecuador              |            1 |                0 |                0 |
+| England              |            1 |                1 |                2 |
+| France               |            3 |                5 |                1 |
+| Germany              |            4 |                9 |                3 |
+| Ghana                |            1 |                1 |                2 |
+| Greece               |            1 |                2 |                1 |
+| Honduras             |            2 |                1 |                5 |
+| Iran                 |            1 |                0 |                0 |
+| Italy                |            2 |                0 |                2 |
+| Ivory Coast          |            1 |                2 |                1 |
+| Japan                |            2 |                1 |                4 |
+| Mexico               |            1 |                1 |                0 |
+| Netherlands          |            4 |                4 |                1 |
+| Nigeria              |            2 |                3 |                3 |
+| Portugal             |            1 |                2 |                1 |
+| Russia               |            1 |                1 |                1 |
+| South Korea          |            2 |                2 |                5 |
+| Spain                |            2 |                1 |                7 |
+| Switzerland          |            2 |                4 |                6 |
+| Uruguay              |            2 |                3 |                4 |
+| USA                  |            2 |                2 |                3 |
++----------------------+--------------+------------------+------------------+
+32 rows in set (0.00 sec)
+
+mysql> SELECT Country_Name, COUNT(Team2),SUM(Team2_score), SUM(Team1_score) FROM MATCH_RESULTS,COUNTRY WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team2 GROUP BY Country_Name;
++----------------------+--------------+------------------+------------------+
+| Country_Name         | COUNT(Team2) | SUM(Team2_score) | SUM(Team1_score) |
++----------------------+--------------+------------------+------------------+
+| Algeria              |            3 |                6 |                6 |
+| Argentina            |            3 |                3 |                3 |
+| Australia            |            1 |                1 |                3 |
+| Belgium              |            2 |                1 |                1 |
+| Bosnia & Herzegovina |            2 |                1 |                3 |
+| Brazil               |            1 |                4 |                1 |
+| Cameroon             |            1 |                0 |                1 |
+| Chile                |            3 |                3 |                3 |
+| Columbia             |            2 |                5 |                3 |
+| Costa Rica           |            3 |                4 |                1 |
+| Croatia              |            2 |                5 |                3 |
+| Ecuador              |            2 |                3 |                3 |
+| England              |            2 |                1 |                2 |
+| France               |            2 |                5 |                2 |
+| Germany              |            3 |                9 |                1 |
+| Ghana                |            2 |                3 |                4 |
+| Greece               |            3 |                1 |                4 |
+| Honduras             |            1 |                0 |                3 |
+| Iran                 |            2 |                1 |                4 |
+| Italy                |            1 |                2 |                1 |
+| Ivory Coast          |            2 |                2 |                4 |
+| Japan                |            1 |                1 |                2 |
+| Mexico               |            3 |                4 |                3 |
+| Netherlands          |            3 |               11 |                3 |
+| Nigeria              |            2 |                0 |                2 |
+| Portugal             |            2 |                2 |                6 |
+| Russia               |            2 |                1 |                2 |
+| South Korea          |            1 |                1 |                1 |
+| Spain                |            1 |                3 |                0 |
+| Switzerland          |            2 |                3 |                1 |
+| Uruguay              |            2 |                1 |                2 |
+| USA                  |            2 |                3 |                3 |
++----------------------+--------------+------------------+------------------+
+32 rows in set (0.00 sec)
+
+mysql> CREATE VIEW TEAM_SUMMARY ( CountryName,NoOfGames,TotalGoalsFor,TotalGoalsAgainst) AS SELECT Country_Name, COUNT(Team1), SUM(Team1_score), SUM(Team2_score) FROM COUNTRY, MATCH_RESULTS WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team1 GROUP BY Country_Name UNION SELECT Country_Name, COUNT(Team2), SUM(Team2_score), SUM(Team1_score) FROM COUNTRY, MATCH_RESULTS WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team2 GROUP BY Country_Name;
+Query OK, 0 rows affected (0.59 sec)
+
+mysql> SELECT CountryName, NoOfGames, TotalGoalsFor, TotalGoalsAgainst FROM TEAM_SUMMARY  ORDER BY NoOfGames DESC;
++----------------------+-----------+---------------+-------------------+
+| CountryName          | NoOfGames | TotalGoalsFor | TotalGoalsAgainst |
++----------------------+-----------+---------------+-------------------+
+| Brazil               |         6 |             7 |                13 |
+| Argentina            |         4 |             5 |                 1 |
+| Netherlands          |         4 |             4 |                 1 |
+| Germany              |         4 |             9 |                 3 |
+| Algeria              |         3 |             6 |                 6 |
+| Netherlands          |         3 |            11 |                 3 |
+| Mexico               |         3 |             4 |                 3 |
+| Greece               |         3 |             1 |                 4 |
+| Germany              |         3 |             9 |                 1 |
+| Costa Rica           |         3 |             4 |                 1 |
+| Chile                |         3 |             3 |                 3 |
+| Argentina            |         3 |             3 |                 3 |
+| France               |         3 |             5 |                 1 |
+| Belgium              |         3 |             5 |                 2 |
+| Columbia             |         3 |             7 |                 1 |
+| Columbia             |         2 |             5 |                 3 |
+| Uruguay              |         2 |             3 |                 4 |
+| USA                  |         2 |             2 |                 3 |
+| Costa Rica           |         2 |             1 |                 1 |
+| Belgium              |         2 |             1 |                 1 |
+| Bosnia & Herzegovina |         2 |             1 |                 3 |
+| Ivory Coast          |         2 |             2 |                 4 |
+| USA                  |         2 |             3 |                 3 |
+| Iran                 |         2 |             1 |                 4 |
+| Croatia              |         2 |             5 |                 3 |
+| Ecuador              |         2 |             3 |                 3 |
+| England              |         2 |             1 |                 2 |
+| France               |         2 |             5 |                 2 |
+| Cameroon             |         2 |             1 |                 8 |
+| Ghana                |         2 |             3 |                 4 |
+| Spain                |         2 |             1 |                 7 |
+| Uruguay              |         2 |             1 |                 2 |
+| Switzerland          |         2 |             3 |                 1 |
+| Honduras             |         2 |             1 |                 5 |
+| Italy                |         2 |             0 |                 2 |
+| Japan                |         2 |             1 |                 4 |
+| Russia               |         2 |             1 |                 2 |
+| Portugal             |         2 |             2 |                 6 |
+| Nigeria              |         2 |             3 |                 3 |
+| Nigeria              |         2 |             0 |                 2 |
+| Australia            |         2 |             2 |                 6 |
+| South Korea          |         2 |             2 |                 5 |
+| Switzerland          |         2 |             4 |                 6 |
+| Italy                |         1 |             2 |                 1 |
+| South Korea          |         1 |             1 |                 1 |
+| Japan                |         1 |             1 |                 2 |
+| Spain                |         1 |             3 |                 0 |
+| Cameroon             |         1 |             0 |                 1 |
+| Honduras             |         1 |             0 |                 3 |
+| Bosnia & Herzegovina |         1 |             3 |                 1 |
+| Chile                |         1 |             3 |                 1 |
+| England              |         1 |             1 |                 2 |
+| Brazil               |         1 |             4 |                 1 |
+| Australia            |         1 |             1 |                 3 |
+| Algeria              |         1 |             1 |                 1 |
+| Russia               |         1 |             1 |                 1 |
+| Portugal             |         1 |             2 |                 1 |
+| Croatia              |         1 |             1 |                 3 |
+| Mexico               |         1 |             1 |                 0 |
+| Ivory Coast          |         1 |             2 |                 1 |
+| Iran                 |         1 |             0 |                 0 |
+| Greece               |         1 |             2 |                 1 |
+| Ghana                |         1 |             1 |                 2 |
+| Ecuador              |         1 |             0 |                 0 |
++----------------------+-----------+---------------+-------------------+
+64 rows in set (0.00 sec)
+
+mysql> SELECT Date_of_Match, Team1, Team2, CASE WHEN Team1_score>Team2_score THEN Team1 ELSE Team2 END AS Winner, ABS(Team1_score-Team2_score) FROM MATCH_RESULTS;
++---------------+----------------------+----------------------+----------------------+------------------------------+
+| Date_of_Match | Team1                | Team2                | Winner               | ABS(Team1_score-Team2_score) |
++---------------+----------------------+----------------------+----------------------+------------------------------+
+| 2014-06-12    | Brazil               | Croatia              | Brazil               |                            2 |
+| 2014-06-13    | Mexico               | Cameroon             | Mexico               |                            1 |
+| 2014-06-13    | Spain                | Netherlands          | Netherlands          |                            4 |
+| 2014-06-13    | Chile                | Australia            | Chile                |                            2 |
+| 2014-06-14    | Columbia             | Greece               | Columbia             |                            3 |
+| 2014-06-14    | Ivory Coast          | Japan                | Ivory Coast          |                            1 |
+| 2014-06-14    | Uruguay              | Costa Rica           | Costa Rica           |                            2 |
+| 2014-06-14    | England              | Italy                | Italy                |                            1 |
+| 2014-06-15    | Switzerland          | Ecuador              | Switzerland          |                            1 |
+| 2014-06-15    | France               | Honduras             | France               |                            3 |
+| 2014-06-15    | Argentina            | Bosnia & Herzegovina | Argentina            |                            1 |
+| 2014-06-16    | Iran                 | Nigeria              | Nigeria              |                            0 |
+| 2014-06-16    | Germany              | Portugal             | Germany              |                            4 |
+| 2014-06-16    | Ghana                | USA                  | USA                  |                            1 |
+| 2014-06-17    | Belgium              | Algeria              | Belgium              |                            1 |
+| 2014-06-17    | Russia               | South Korea          | South Korea          |                            0 |
+| 2014-06-17    | Brazil               | Mexico               | Mexico               |                            0 |
+| 2014-06-18    | Cameroon             | Croatia              | Croatia              |                            4 |
+| 2014-06-18    | Spain                | Chile                | Chile                |                            2 |
+| 2014-06-18    | Australia            | Netherlands          | Netherlands          |                            1 |
+| 2014-06-19    | Columbia             | Ivory Coast          | Columbia             |                            1 |
+| 2014-06-19    | Japan                | Greece               | Greece               |                            0 |
+| 2014-06-19    | Uruguay              | England              | Uruguay              |                            1 |
+| 2014-06-20    | Italy                | Costa Rica           | Costa Rica           |                            1 |
+| 2014-06-20    | Switzerland          | France               | France               |                            3 |
+| 2014-06-20    | Honduras             | Ecuador              | Ecuador              |                            1 |
+| 2014-06-21    | Argentina            | Iran                 | Argentina            |                            1 |
+| 2014-06-21    | Nigeria              | Bosnia & Herzegovina | Nigeria              |                            1 |
+| 2014-06-21    | Germany              | Ghana                | Ghana                |                            0 |
+| 2014-06-22    | USA                  | Portugal             | Portugal             |                            0 |
+| 2014-06-22    | Belgium              | Russia               | Belgium              |                            1 |
+| 2014-06-22    | South Korea          | Algeria              | Algeria              |                            2 |
+| 2014-06-23    | Cameroon             | Brazil               | Brazil               |                            3 |
+| 2014-06-23    | Croatia              | Mexico               | Mexico               |                            2 |
+| 2014-06-23    | Australia            | Spain                | Spain                |                            3 |
+| 2014-06-23    | Netherlands          | Chile                | Netherlands          |                            2 |
+| 2014-06-24    | Japan                | Columbia             | Columbia             |                            3 |
+| 2014-06-24    | Greece               | Ivory Coast          | Greece               |                            1 |
+| 2014-06-24    | Italy                | Uruguay              | Uruguay              |                            1 |
+| 2014-06-24    | Costa Rica           | England              | England              |                            0 |
+| 2014-06-25    | Honduras             | Switzerland          | Switzerland          |                            3 |
+| 2014-06-25    | Ecuador              | France               | France               |                            0 |
+| 2014-06-25    | Nigeria              | Argentina            | Argentina            |                            1 |
+| 2014-06-25    | Bosnia & Herzegovina | Iran                 | Bosnia & Herzegovina |                            2 |
+| 2014-06-26    | USA                  | Germany              | Germany              |                            1 |
+| 2014-06-26    | Portugal             | Ghana                | Portugal             |                            1 |
+| 2014-06-26    | South Korea          | Belgium              | Belgium              |                            1 |
+| 2014-06-26    | Algeria              | Russia               | Russia               |                            0 |
+| 2014-06-28    | Brazil               | Chile                | Chile                |                            0 |
+| 2014-06-28    | Columbia             | Uruguay              | Columbia             |                            2 |
+| 2014-06-29    | Netherlands          | Mexico               | Netherlands          |                            1 |
+| 2014-06-29    | Costa Rica           | Greece               | Greece               |                            0 |
+| 2014-06-30    | France               | Nigeria              | France               |                            2 |
+| 2014-06-30    | Germany              | Algeria              | Germany              |                            1 |
+| 2014-07-01    | Argentina            | Switzerland          | Argentina            |                            1 |
+| 2014-07-01    | Belgium              | USA                  | Belgium              |                            1 |
+| 2014-07-04    | Brazil               | Columbia             | Brazil               |                            1 |
+| 2014-07-04    | France               | Germany              | Germany              |                            1 |
+| 2014-07-05    | Netherlands          | Costa Rica           | Costa Rica           |                            0 |
+| 2014-07-05    | Argentina            | Belgium              | Argentina            |                            1 |
+| 2014-07-08    | Brazil               | Germany              | Germany              |                            6 |
+| 2014-07-09    | Netherlands          | Argentina            | Argentina            |                            0 |
+| 2014-07-12    | Brazil               | Netherlands          | Netherlands          |                            3 |
+| 2014-07-13    | Germany              | Argentina            | Germany              |                            1 |
++---------------+----------------------+----------------------+----------------------+------------------------------+
+64 rows in set (0.00 sec)
+
+mysql> SELECT * FROM MATCH_RESULTS WHERE Team1="Brazil" OR Team2="Brazil";
++----------+---------------+---------------------+----------+-------------+-------------+-------------+--------------------+----------------+
+| Match_id | Date_of_Match | Start_Time_Of_Match | Team1    | Team2       | Team1_score | Team2_score | Stadium_Name       | Hosty_City     |
++----------+---------------+---------------------+----------+-------------+-------------+-------------+--------------------+----------------+
+|        1 | 2014-06-12    | 17:00:00            | Brazil   | Croatia     |           3 |           1 | Arena de Sao Paulo | Sao Paulo      |
+|       17 | 2014-06-17    | 16:00:00            | Brazil   | Mexico      |           0 |           0 | Estadio Castelao   | Fortaleza      |
+|       33 | 2014-06-23    | 17:00:00            | Cameroon | Brazil      |           1 |           4 | Estadio Nacional   | Brasilia       |
+|       49 | 2014-06-28    | 13:00:00            | Brazil   | Chile       |           1 |           1 | Estadio Mineirao   | Belo Horizonte |
+|       57 | 2014-07-04    | 17:00:00            | Brazil   | Columbia    |           2 |           1 | Estadio Castelao   | Fortaleza      |
+|       61 | 2014-07-08    | 17:00:00            | Brazil   | Germany     |           1 |           7 | Estadio Mineirao   | Belo Horizonte |
+|       63 | 2014-07-12    | 17:00:00            | Brazil   | Netherlands |           0 |           3 | Estadio Nacional   | Brasilia       |
++----------+---------------+---------------------+----------+-------------+-------------+-------------+--------------------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT Name,Country, Goals FROM PLAYERS, PLAYER_ASSISTS_GOALS WHERE Goals>0 AND PLAYERS.Player_id=PLAYER_ASSISTS_GOALS.Player_id ORDER BY Goals DESC;
++---------------------------+----------------------+-------+
+| Name                      | Country              | Goals |
++---------------------------+----------------------+-------+
+| JAMES RODRIGUEZ           | Columbia             |     6 |
+| THOMAS MUELLER            | Germany              |     5 |
+| ROBIN VAN PERSIE          | Netherlands          |     4 |
+| LIONEL MESSI              | Argentina            |     4 |
+| NEYMAR SANTOS JR.         | Brazil               |     4 |
+| ARJEN ROBBEN              | Netherlands          |     3 |
+| KARIM BENZEMA             | France               |     3 |
+| ANDRE SCHUERRLE           | Germany              |     3 |
+| XHERDAN SHAQIRI           | Switzerland          |     3 |
+| ENNER VALENCIA            | Ecuador              |     3 |
+| MIROSLAV KLOSE            | Germany              |     2 |
+| CLINT DEMPSEY             | USA                  |     2 |
+| ASAMOAH GYAN              | Ghana                |     2 |
+| TIM CAHILL                | Australia            |     2 |
+| BRYAN RUIZ                | Costa Rica           |     2 |
+| ALEXIS SANCHEZ            | Chile                |     2 |
+| LUIS SUAREZ               | Uruguay              |     2 |
+| DAVID LUIZ                | Brazil               |     2 |
+| TONI KROOS                | Germany              |     2 |
+| GERVINHO YAO KOUASSI      | Ivory Coast          |     2 |
+| ANDRE AYEW                | Ghana                |     2 |
+| MARIO GOETZE              | Germany              |     2 |
+| MATS HUMMELS              | Germany              |     2 |
+| OSCAR DOS SANTOS JR.      | Brazil               |     2 |
+| JACKSON MARTINEZ          | Columbia             |     2 |
+| MEMPHIS DEPAY             | Netherlands          |     2 |
+| AHMED MUSA                | Nigeria              |     2 |
+| WILFRIED BONY             | Ivory Coast          |     2 |
+| ISLAM SLIMANI             | Algeria              |     2 |
+| ABDELMOUMENE DJABOU       | Algeria              |     2 |
+| IVAN PERISIC              | Croatia              |     2 |
+| MARIO MANDZUKIC           | Croatia              |     2 |
+| RAFAEL MARQUEZ            | Mexico               |     1 |
+| FERNANDO TORRES           | Spain                |     1 |
+| JERMAINE JONES            | USA                  |     1 |
+| KLAAS JAN HUNTELAAR       | Netherlands          |     1 |
+| ALEKSANDR KERZHAKOV       | Russia               |     1 |
+| IVICA OLIC                | Croatia              |     1 |
+| WAYNE ROONEY              | England              |     1 |
+| SAMI KHEDIRA              | Germany              |     1 |
+| MILE JEDINAK              | Australia            |     1 |
+| PABLO ARMERO              | Columbia             |     1 |
+| CRISTIANO RONALDO         | Portugal             |     1 |
+| JORGE VALDIVIA            | Chile                |     1 |
+| XABI ALONSO               | Spain                |     1 |
+| FERNANDINHO LUIZ ROZA     | Brazil               |     1 |
+| JEAN BEAUSEJOUR           | Chile                |     1 |
+| PETER ODEMWINGIE          | Nigeria              |     1 |
+| WESLEY SNEIJDER           | Netherlands          |     1 |
+| BLERIM DZEMAILI           | Switzerland          |     1 |
+| ORIBE PERALTA             | Mexico               |     1 |
+| JAVIER HERNANDEZ          | Mexico               |     1 |
+| DIEGO GODIN               | Uruguay              |     1 |
+| DAVID VILLA               | Spain                |     1 |
+| KEISUKE HONDA             | Japan                |     1 |
+| FRED CHAVES GUEDES        | Brazil               |     1 |
+| GIOVANI DOS SANTOS        | Mexico               |     1 |
+| ANDRES GUARDADO           | Mexico               |     1 |
+| VARELA SILVESTRE          | Portugal             |     1 |
+| NANI DA CUNHA             | Portugal             |     1 |
+| ANGEL DI MARIA            | Argentina            |     1 |
+| JUAN MATA                 | Spain                |     1 |
+| EDINSON CAVANI            | Uruguay              |     1 |
+| LEE KEUNHO                | South Korea          |     1 |
+| MARCOS URENA              | Costa Rica           |     1 |
+| EDUARDO VARGAS            | Chile                |     1 |
+| CARLO COSTLY              | Honduras             |     1 |
+| GONZALO HIGUAIN           | Argentina            |     1 |
+| SHINJI OKAZAKI            | Japan                |     1 |
+| THIAGO SILVA              | Brazil               |     1 |
+| MAROUANE FELLAINI         | Belgium              |     1 |
+| JAN VERTONGHEN            | Belgium              |     1 |
+| KOO JACHEOL               | South Korea          |     1 |
+| RAFIK HALLICHE            | Algeria              |     1 |
+| MATHIEU VALBUENA          | France               |     1 |
+| GEORGIOS SAMARAS          | Greece               |     1 |
+| CLAUDIO MARCHISIO         | Italy                |     1 |
+| SOKRATIS PAPASTATHOPOULOS | Greece               |     1 |
+| MIRALEM PJANIC            | Bosnia & Herzegovina |     1 |
+| EDIN DZEKO                | Bosnia & Herzegovina |     1 |
+| VEDAD IBISEVIC            | Bosnia & Herzegovina |     1 |
+| MARIO BALOTELLI           | Italy                |     1 |
+| MESUT OEZIL               | Germany              |     1 |
+| DANIEL STURRIDGE          | England              |     1 |
+| JOEL CAMPBELL             | Costa Rica           |     1 |
+| SON HEUNGMIN              | South Korea          |     1 |
+| JUAN CUADRADO             | Columbia             |     1 |
+| TEOFILO GUTIERREZ         | Columbia             |     1 |
+| HARIS SEFEROVIC           | Switzerland          |     1 |
+| GRANIT XHAKA              | Switzerland          |     1 |
+| OSCAR DUARTE              | Costa Rica           |     1 |
+| STEFAN DE VRIJ            | Netherlands          |     1 |
+| MOUSSA SISSOKO            | France               |     1 |
+| CHARLES ARANGUIZ          | Chile                |     1 |
+| MARCOS ROJO               | Argentina            |     1 |
+| SOFIANE FEGHOULI          | Algeria              |     1 |
+| DALEY BLIND               | Netherlands          |     1 |
+| LEROY FER                 | Netherlands          |     1 |
+| GEORGINIO WIJNALDUM       | Netherlands          |     1 |
+| JOEL MATIP                | Cameroon             |     1 |
+| ADMIR MEHMEDI             | Switzerland          |     1 |
+| JUAN QUINTERO             | Columbia             |     1 |
+| BLAISE MATUIDI            | France               |     1 |
+| OLIVIER GIROUD            | France               |     1 |
+| ALEXANDER KOKORIN         | Russia               |     1 |
+| ROMELU LUKAKU             | Belgium              |     1 |
+| DRIES MERTENS             | Belgium              |     1 |
+| KEVIN DE BRUYNE           | Belgium              |     1 |
+| OGNJEN VRANJES            | Bosnia & Herzegovina |     1 |
+| REZA GHOOCHANNEJAD        | Iran                 |     1 |
+| ANDREAS SAMARIS           | Greece               |     1 |
+| YACINE BRAHIMI            | Algeria              |     1 |
+| PAUL POGBA                | France               |     1 |
+| JULIAN GREEN              | USA                  |     1 |
+| JOHN BROOKS               | USA                  |     1 |
+| DIVOCK ORIGI              | Belgium              |     1 |
++---------------------------+----------------------+-------+
+116 rows in set (0.00 sec)
+
+mysql> SELECT Name,Country, Goals FROM PLAYERS, PLAYER_ASSISTS_GOALS WHERE Goals>2 AND PLAYERS.Player_id=PLAYER_ASSISTS_GOALS.Player_id ORDER BY Goals DESC;
++-------------------+-------------+-------+
+| Name              | Country     | Goals |
++-------------------+-------------+-------+
+| JAMES RODRIGUEZ   | Columbia    |     6 |
+| THOMAS MUELLER    | Germany     |     5 |
+| ROBIN VAN PERSIE  | Netherlands |     4 |
+| LIONEL MESSI      | Argentina   |     4 |
+| NEYMAR SANTOS JR. | Brazil      |     4 |
+| ARJEN ROBBEN      | Netherlands |     3 |
+| KARIM BENZEMA     | France      |     3 |
+| ANDRE SCHUERRLE   | Germany     |     3 |
+| XHERDAN SHAQIRI   | Switzerland |     3 |
+| ENNER VALENCIA    | Ecuador     |     3 |
++-------------------+-------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT Country_Name, Population FROM COUNTRY ORDER BY Population DESC;
++----------------------+------------+
+| Country_Name         | Population |
++----------------------+------------+
+| USA                  |     318.90 |
+| Brazil               |     202.40 |
+| Nigeria              |     173.60 |
+| Russia               |     142.46 |
+| Japan                |     127.06 |
+| Mexico               |     122.30 |
+| Germany              |      82.60 |
+| Iran                 |      77.97 |
+| France               |      64.60 |
+| Italy                |      61.07 |
+| England              |      53.50 |
+| South Korea          |      50.42 |
+| Columbia             |      49.14 |
+| Spain                |      47.10 |
+| Argentina            |      42.30 |
+| Algeria              |      39.90 |
+| Ghana                |      25.90 |
+| Australia            |      23.59 |
+| Cameroon             |      23.03 |
+| Ivory Coast          |      20.32 |
+| Chile                |      17.62 |
+| Netherlands          |      16.90 |
+| Ecuador              |      15.98 |
+| Belgium              |      11.20 |
+| Greece               |      11.20 |
+| Portugal             |      10.58 |
+| Honduras             |       8.09 |
+| Switzerland          |       8.00 |
+| Costa Rica           |       4.87 |
+| Croatia              |       4.25 |
+| Bosnia & Herzegovina |       3.83 |
+| Uruguay              |       3.42 |
++----------------------+------------+
+32 rows in set (0.00 sec)
+
+mysql> notee;

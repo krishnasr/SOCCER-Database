@@ -1,0 +1,96 @@
+mysql> USE kxs0344;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> SOURCE /home/k/kx/kxs0344/public_html/SOCCER1.sql;
+Query OK, 0 rows affected (0.14 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_kxs0344    |
++----------------------+
+| COUNTRY              |
+| MATCH_RESULTS        |
+| PLAYERS              |
+| PLAYER_ASSISTS_GOALS |
+| PLAYER_CARDS         |
++----------------------+
+5 rows in set (0.00 sec)
+
+mysql> DESC COUNTRY;
++--------------------+---------------+------+-----+---------+-------+
+| Field              | Type          | Null | Key | Default | Extra |
++--------------------+---------------+------+-----+---------+-------+
+| Country_Name       | varchar(20)   | NO   | PRI | NULL    |       |
+| Population         | decimal(10,2) | YES  |     | NULL    |       |
+| No_of_Worldcup_won | int           | YES  |     | NULL    |       |
+| Manager            | varchar(20)   | YES  |     | NULL    |       |
++--------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> DESC PLAYERS;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Player_id        | int         | NO   | PRI | NULL    |       |
+| Name             | varchar(40) | YES  |     | NULL    |       |
+| Fname            | varchar(20) | YES  |     | NULL    |       |
+| Lname            | varchar(35) | YES  |     | NULL    |       |
+| DOB              | date        | YES  |     | NULL    |       |
+| Country          | varchar(20) | YES  | MUL | NULL    |       |
+| Height_cms       | int         | YES  |     | NULL    |       |
+| Club             | varchar(30) | YES  |     | NULL    |       |
+| Position         | varchar(10) | YES  |     | NULL    |       |
+| Caps_for_Country | int         | YES  |     | NULL    |       |
+| IS_CAPTAIN       | tinyint(1)  | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+11 rows in set (0.01 sec)
+
+mysql> DESC MATCH_RESULTS;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Match_id            | int         | NO   | PRI | NULL    |       |
+| Date_of_Match       | date        | YES  |     | NULL    |       |
+| Start_Time_Of_Match | time        | YES  |     | NULL    |       |
+| Team1               | varchar(20) | YES  | MUL | NULL    |       |
+| Team2               | varchar(20) | YES  | MUL | NULL    |       |
+| Team1_score         | int         | YES  |     | NULL    |       |
+| Team2_score         | int         | YES  |     | NULL    |       |
+| Stadium_Name        | varchar(35) | YES  |     | NULL    |       |
+| Hosty_City          | varchar(20) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> DESC PLAYER_CARDS;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| Player_id    | int  | NO   | PRI | NULL    |       |
+| Yellow_Cards | int  | YES  |     | NULL    |       |
+| Red_Cards    | int  | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC PLAYER_ASSISTS_GOALS;
++----------------+------+------+-----+---------+-------+
+| Field          | Type | Null | Key | Default | Extra |
++----------------+------+------+-----+---------+-------+
+| Player_id      | int  | NO   | PRI | NULL    |       |
+| No_of_Matches  | int  | YES  |     | NULL    |       |
+| Goals          | int  | YES  |     | NULL    |       |
+| Assists        | int  | YES  |     | NULL    |       |
+| Minutes_Played | int  | YES  |     | NULL    |       |
++----------------+------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> notee;

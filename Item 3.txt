@@ -1,0 +1,37 @@
+1. SELECT Name, Club, Country_Name FROM COUNTRY, PLAYERS WHERE Position="Midfielder" AND Country="USA" AND COUNTRY.Country_Name=PLAYERS.Country;
+
+2. SELECT Name, Club, Country, (2014-YEAR(DOB)) FROM PLAYERS;
+
+3. SELECT Country_Name from COUNTRY WHERE No_of_worldcup_won>2;
+
+4. SELECT Country_Name from COUNTRY WHERE No_of_worldcup_won=0;
+
+5. SELECT Name, Country FROM PLAYERS, PLAYER_CARDS WHERE Yellow_Cards=0 AND Red_Cards=0 AND PLAYERS.Player_id=PLAYER_CARDS.Player_id;
+
+6. SELECT Name, Country FROM PLAYERS, PLAYER_CARDS WHERE PLAYERS.Player_id=PLAYER_CARDS.Player_id AND Red_Cards = 1;
+ 
+7. SELECT Hosty_City, COUNT(Hosty_city) AS No_of_games FROM MATCH_RESULTS GROUP BY Hosty_City;
+
+8. SELECT Hosty_City, COUNT(Hosty_City) AS MostGamesPlayed FROM MATCH_RESULTS GROUP BY Hosty_City ORDER BY COUNT(Hosty_City) DESC LIMIT 2;
+
+9. SELECT Country_Name, COUNT(Team1),SUM(Team1_score), SUM(Team2_score) FROM MATCH_RESULTS,COUNTRY WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team1 GROUP BY Country_Name;
+
+10. SELECT Country_Name, COUNT(Team2),SUM(Team2_score), SUM(Team1_score) FROM MATCH_RESULTS,COUNTRY WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team2 GROUP BY Country_Name;
+
+11. CREATE VIEW TEAM_SUMMARY ( CountryName,NoOfGames,TotalGoalsFor,TotalGoalsAgainst) AS 
+    SELECT Country_Name, COUNT(Team1), SUM(Team1_score), SUM(Team2_score) FROM COUNTRY, MATCH_RESULTS WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team1 GROUP BY Country_Name  
+    UNION 
+    SELECT Country_Name, COUNT(Team2), SUM(Team2_score), SUM(Team1_score) FROM COUNTRY, MATCH_RESULTS WHERE COUNTRY.Country_Name=MATCH_RESULTS.Team2 GROUP BY Country_Name;
+
+    SELECT CountryName, NoOfGames, TotalGoalsFor, TotalGoalsAgainst FROM TEAM_SUMMARY  ORDER BY NoOfGames DESC;
+   
+12. SELECT Date_of_Match, Team1, Team2, CASE WHEN Team1_score>Team2_score THEN Team1 ELSE Team2 END AS Winner, ABS(Team1_score-Team2_score) FROM MATCH_RESULTS;
+
+13. SELECT * FROM MATCH_RESULTS WHERE Team1="Brazil" OR Team2="Brazil";
+
+14. SELECT Name,Country, Goals FROM PLAYERS, PLAYER_ASSISTS_GOALS WHERE Goals>0 AND PLAYERS.Player_id=PLAYER_ASSISTS_GOALS.Player_id ORDER BY Goals DESC;
+
+15. SELECT Name,Country, Goals FROM PLAYERS, PLAYER_ASSISTS_GOALS WHERE Goals>2 AND PLAYERS.Player_id=PLAYER_ASSISTS_GOALS.Player_id ORDER BY Goals DESC;
+
+16. SELECT Country_Name, Population FROM COUNTRY ORDER BY Population DESC;
+

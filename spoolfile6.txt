@@ -1,0 +1,17 @@
+mysql> USE kxs0344;
+Database changed
+mysql> INSERT INTO COUNTRY VALUES("India",380.60,4,"Chris Hemsworth");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO PLAYERS VALUES(12346, "RAHUL PATIK","RAHUL","PATIK","1981-02-12","India",190,"Deportive Cali","GoalKeeper",121,1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO PLAYERS VALUES(12347, "RAM SANKAR","RAM","SANKAR","1979-04-12","India",192,"Deportive Cali","Defender",119,0);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> DELETE FROM COUNTRY WHERE Country_Name="India";
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`kxs0344`.`PLAYERS`, CONSTRAINT `PLAYERS_ibfk_1` FOREIGN KEY (`Country`) REFERENCES `COUNTRY` (`Country_Name`))
+mysql> notee;
+
+---> We have inserted 3 records that does not violates any integrity constraint
+--->when we delete a record and the record have references in foreign key it violates Referencial Integrity constraint because deleting a value in primary key and that value is in the foreign key then it violates referencial integrity because the value for the foreign key does not have any refereces in the primary key table.
